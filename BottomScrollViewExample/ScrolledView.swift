@@ -17,20 +17,21 @@ class ScrolledView: UIView, UIGestureRecognizerDelegate {
 
     var openValue: CGFloat = 0 {
         didSet {
-            containerTopAnchor.constant = self.bounds.height - openValue * self.bounds.height
+            containerViewHeight.constant = self.bounds.height * openValue
         }
     }
 
-    var canTouchSuperView: Bool = true
-    
+    var hideOnTapSuperView: Bool = true
+
     var titleLabel: UILabel!
-    private var containerTopAnchor: NSLayoutConstraint!
+    private var containerViewHeight: NSLayoutConstraint!
     private var previousPoint = CGPoint(x: 0, y: 0)
     private var limit: CGFloat = 0
 
-    private var scrollViews: [UIScrollView] = []
-    private var topPoint: CGFloat!
-    private var bottomPoint: CGFloat!
+    private var topPoint: CGFloat {
+        return self.bounds.height - headerView.bounds.height
+    }
+    private var bottomPoint: CGFloat = 0
     private var firstPoint: CGFloat!
     private var secondPoint: CGFloat!
 
@@ -55,7 +56,7 @@ class ScrolledView: UIView, UIGestureRecognizerDelegate {
     }
 
     func addPoint(value: CGFloat) {
-        
+        points.append(value)
     }
 
     override func addSubview(_ view: UIView) {
@@ -65,7 +66,10 @@ class ScrolledView: UIView, UIGestureRecognizerDelegate {
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let view = super.hitTest(point, with: event)
         if view == self {
-            return canTouchSuperView ? nil : view
+            if hideOnTapSuperView {
+                openValue = 0
+            }
+            return nil
         }
         return view
     }
@@ -80,8 +84,8 @@ class ScrolledView: UIView, UIGestureRecognizerDelegate {
         containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         containerView.widthAnchor.constraint(equalToConstant: self.bounds.width).isActive = true
-        containerTopAnchor = containerView.heightAnchor.constraint(equalToConstant: 0)
-        containerTopAnchor.isActive = true
+        containerViewHeight = containerView.heightAnchor.constraint(equalToConstant: bottomPoint)
+        containerViewHeight.isActive = true
         createHeader()
     }
 
@@ -118,15 +122,14 @@ class ScrolledView: UIView, UIGestureRecognizerDelegate {
 
     //MARK: - Private
     private func changeSize(difference: CGFloat) {
-        containerTopAnchor.constant += difference
-       // if difference > 0, containerTopAnchor.constant <= topPoint {
-       //     containerTopAnchor.constant += difference
-       //     return
-      //  }
-      //  if difference < 0, containerTopAnchor.constant >= bottomPoint {
-      //      containerTopAnchor.constant += difference
-      //      return
-      //  }
+        if difference > 0, containerViewHeight.constant <= topPoint {
+            containerViewHeight.constant += difference
+            return
+        }
+        if difference < 0, containerViewHeight.constant >= bottomPoint {
+            containerViewHeight.constant += difference
+            return
+        }
     }
 
     private func moveToPoint() {

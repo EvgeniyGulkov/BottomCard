@@ -8,19 +8,27 @@
 
 import UIKit
 
-class ScrolledView: UIView, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate {
+class ScrolledView: UIView, UIGestureRecognizerDelegate {
+    private let headerDefaultHeight: CGFloat = 44
+    private var containerView: UIView!
+    var headerView: UIView!
 
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var containerViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var headerHeight: NSLayoutConstraint!
-    @IBOutlet weak var headerView: UIView!
-    @IBOutlet var baseView: UIView!
+    var points: [CGFloat] = []
+
+    var openValue: CGFloat = 0 {
+        didSet {
+            containerTopAnchor.constant = self.bounds.height - openValue * self.bounds.height
+        }
+    }
+
+    var canTouchSuperView: Bool = true
     
-    var previousPoint = CGPoint(x: 0, y: 0)
-    var limit: CGFloat = 0
-    var tableGesture: UIPanGestureRecognizer!
+    var titleLabel: UILabel!
+    private var containerTopAnchor: NSLayoutConstraint!
+    private var previousPoint = CGPoint(x: 0, y: 0)
+    private var limit: CGFloat = 0
 
+    private var scrollViews: [UIScrollView] = []
     private var topPoint: CGFloat!
     private var bottomPoint: CGFloat!
     private var firstPoint: CGFloat!
@@ -37,115 +45,159 @@ class ScrolledView: UIView, UITableViewDataSource, UITableViewDelegate, UIGestur
     }
 
     private func commonInit() {
-        Bundle.main.loadNibNamed("ScrolledView", owner: self, options: nil)
-        baseView.frame = self.bounds
-        self.addSubview(baseView)
-        self.translatesAutoresizingMaskIntoConstraints = false
+        createContainer()
+    }
 
-        tableView.delegate = self
-        tableView.dataSource = self
-        headerView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(headerTouched)))
-        headerView.gestureRecognizers?.first?.delegate = self
+    func addScroll( for scrollView: UIScrollView) {
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(scrollViewScrolled))
+        gesture.delegate = self
+        scrollView.addGestureRecognizer(gesture)
+    }
+
+    func addPoint(value: CGFloat) {
         
-        tableGesture = UIPanGestureRecognizer(target: self, action: #selector(tableViewTouched))
-        tableView.addGestureRecognizer(tableGesture)
-        tableGesture.delegate = self
+    }
+
+    override func addSubview(_ view: UIView) {
+        containerView.addSubview(view)
+    }
+
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let view = super.hitTest(point, with: event)
+        if view == self {
+            return canTouchSuperView ? nil : view
+        }
+        return view
+    }
+
+    private func createContainer() {
+        guard containerView == nil else {return}
+        containerView = UIView()
+        containerView.backgroundColor = .darkGray
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        super.addSubview(containerView)
+
+        containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        containerView.widthAnchor.constraint(equalToConstant: self.bounds.width).isActive = true
+        containerTopAnchor = containerView.heightAnchor.constraint(equalToConstant: 0)
+        containerTopAnchor.isActive = true
+        createHeader()
+    }
+
+    private func createHeader() {
+        headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: headerDefaultHeight))
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.backgroundColor = .systemYellow
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(headerTouched))
+        headerView.addGestureRecognizer(gesture)
+        super.addSubview(headerView)
+
+        // setup headerView
+        headerView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
+        headerView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
+        headerView.bottomAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
+        headerView.heightAnchor.constraint(equalToConstant: headerDefaultHeight).isActive = true
         
-        topPoint = frame.height
-        bottomPoint = headerHeight.constant
-        firstPoint = frame.height / 3
-        secondPoint = firstPoint * 2
-        containerViewHeight.constant = bottomPoint
+        let maskPath = UIBezierPath(roundedRect: headerView.bounds,
+                                    byRoundingCorners: [.topRight, .topLeft],
+                                    cornerRadii: CGSize(width: 15, height: 15))
+        let shape = CAShapeLayer()
+        shape.path = maskPath.cgPath
+        headerView.layer.mask = shape
+        addTitle()
+    }
+
+    private func addTitle() {
+        titleLabel = UILabel(frame: headerView.bounds)
+        titleLabel.text = "Title"
+        titleLabel.textColor = .black
+        titleLabel.textAlignment = .center
+        headerView.addSubview(titleLabel)
     }
 
     //MARK: - Private
     private func changeSize(difference: CGFloat) {
-        if difference > 0, containerViewHeight.constant <= topPoint {
-            containerViewHeight.constant += difference
-            return
-        }
-        if difference < 0, containerViewHeight.constant >= bottomPoint {
-            containerViewHeight.constant += difference
-            return
-        }
+        containerTopAnchor.constant += difference
+       // if difference > 0, containerTopAnchor.constant <= topPoint {
+       //     containerTopAnchor.constant += difference
+       //     return
+      //  }
+      //  if difference < 0, containerTopAnchor.constant >= bottomPoint {
+      //      containerTopAnchor.constant += difference
+      //      return
+      //  }
     }
 
     private func moveToPoint() {
-        if containerViewHeight.constant < secondPoint - firstPoint / 2,
-            containerViewHeight.constant > firstPoint / 2 {
-            moveWithAnimation(point: firstPoint)
-        }
-        if containerViewHeight.constant < firstPoint / 2 {
-            moveWithAnimation(point: bottomPoint)
-        }
-        if containerViewHeight.constant > secondPoint - (secondPoint - firstPoint) / 2,
-            containerViewHeight.constant < topPoint - (topPoint - secondPoint) / 2 {
-            moveWithAnimation(point: secondPoint)
-        }
-        if containerViewHeight.constant > topPoint - (topPoint - secondPoint) / 2 {
-            moveWithAnimation(point: topPoint)
-        }
+      //  if containerViewHeight.constant < secondPoint - firstPoint / 2,
+      //      containerViewHeight.constant > firstPoint / 2 {
+      //      moveWithAnimation(point: firstPoint)
+      //  }
+     //   if containerViewHeight.constant < firstPoint / 2 {
+     //       moveWithAnimation(point: bottomPoint)
+     //   }
+     //   if containerViewHeight.constant > secondPoint - (secondPoint - firstPoint) / 2,
+     //       containerViewHeight.constant < topPoint - (topPoint - secondPoint) / 2 {
+     //       moveWithAnimation(point: secondPoint)
+    //    }
+    //    if containerViewHeight.constant > topPoint - (topPoint - secondPoint) / 2 {
+    //        moveWithAnimation(point: topPoint)
+    //    }
     }
 
     private func moveWithAnimation(point: CGFloat) {
-        UIView.animate(withDuration: 0.1, animations: {
-            self.containerViewHeight.constant = point
-            self.containerView.layoutIfNeeded()
-        })
+      //  UIView.animate(withDuration: 0.1, animations: {
+       //     self.containerViewHeight.constant = point
+      //      self.containerView.layoutIfNeeded()
+      //  })
     }
 
     // MARK: - Selectors
     @objc
-    func tableViewTouched(_ sender: UIPanGestureRecognizer) {
+    private func scrollViewScrolled(_ sender: UIPanGestureRecognizer) {
+        guard let scrollView = sender.view as? UIScrollView else {return}
         if sender.state == .changed {
-            limit = tableView.contentSize.height - tableView.visibleSize.height
-            let point = tableView.panGestureRecognizer.location(in: self)
+            limit = scrollView.contentSize.height - scrollView.visibleSize.height
+            let point = scrollView.panGestureRecognizer.location(in: self)
             let difference = previousPoint.y - point.y
-            if round(tableView.contentOffset.y) >= round(limit), difference > 0 {
+            if round(scrollView.contentOffset.y) >= round(limit), difference > 0 {
                 changeSize(difference: difference)
             }
-            if round(tableView.contentOffset.y) <= 0, difference < 0 {
+            if round(scrollView.contentOffset.y) <= 0, difference < 0 {
                 changeSize(difference: difference)
                 
             }
-            previousPoint = tableView.panGestureRecognizer.location(in: self)
+            previousPoint = scrollView.panGestureRecognizer.location(in: self)
         } else if sender.state == .ended {
-            moveToPoint()
+         //   moveToPoint()
         }
     }
 
     @objc
-    func headerTouched(_ sender: UIPanGestureRecognizer) {
-        if sender.state == .changed {
+    private func headerTouched(_ sender: UIPanGestureRecognizer) {
+        if sender.state == .began {
+            previousPoint = sender.location(in: self)
+        } else if sender.state == .changed {
             let point = sender.location(in: self)
             let difference = previousPoint.y - point.y
             changeSize(difference: difference)
             previousPoint = sender.location(in: self)
         } else if sender.state == .ended {
-            moveToPoint()
+            //  moveToPoint()
         }
     }
 
     // MARK: - Gesture delegate
     override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        guard let scrollView = gestureRecognizer.view as? UIScrollView else {return false}
         previousPoint = gestureRecognizer.location(in: self)
-        limit = tableView.contentSize.height - tableView.visibleSize.height
+        limit = scrollView.contentSize.height - scrollView.visibleSize.height
         return true
     }
 
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
                            shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
-    }
-
-    // MARK: - TableView Delegate
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = String(Int.random(in: 0...1000))
-        return cell
     }
 }

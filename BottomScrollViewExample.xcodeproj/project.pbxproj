@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		672BC2FD24DEBA6D003A530F /* ScrolledView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 672BC2FC24DEBA6D003A530F /* ScrolledView.xib */; };
 		676282D724D9A13000FB4C99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676282D624D9A13000FB4C99 /* AppDelegate.swift */; };
 		676282D924D9A13000FB4C99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676282D824D9A13000FB4C99 /* SceneDelegate.swift */; };
 		676282DB24D9A13000FB4C99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676282DA24D9A13000FB4C99 /* ViewController.swift */; };
@@ -18,7 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		672BC2FC24DEBA6D003A530F /* ScrolledView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrolledView.xib; sourceTree = "<group>"; };
 		676282D324D9A13000FB4C99 /* BottomScrollViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomScrollViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		676282D624D9A13000FB4C99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		676282D824D9A13000FB4C99 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +63,6 @@
 				676282DA24D9A13000FB4C99 /* ViewController.swift */,
 				676282DC24D9A13000FB4C99 /* Main.storyboard */,
 				676282EC24D9A33A00FB4C99 /* ScrolledView.swift */,
-				672BC2FC24DEBA6D003A530F /* ScrolledView.xib */,
 				676282DF24D9A13200FB4C99 /* Assets.xcassets */,
 				676282E124D9A13200FB4C99 /* LaunchScreen.storyboard */,
 				676282E424D9A13200FB4C99 /* Info.plist */,
@@ -132,7 +129,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				676282E324D9A13200FB4C99 /* LaunchScreen.storyboard in Resources */,
-				672BC2FD24DEBA6D003A530F /* ScrolledView.xib in Resources */,
 				676282E024D9A13200FB4C99 /* Assets.xcassets in Resources */,
 				676282DE24D9A13000FB4C99 /* Main.storyboard in Resources */,
 			);

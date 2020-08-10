@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, ScrolledViewDelegate {
 
     private let mockText = """
     FSDHFIUSHD IUHFISD HFIUSHDIFUH ISDUHF IUSHD FIUHSDI
@@ -35,7 +35,19 @@ class ViewController: UIViewController, UITableViewDataSource {
         view.addSubview(scrolledView)
         scrolledView.addSubview(textView)
         scrolledView.addScroll(for: textView)
+        scrolledView.addPoint(value: 0.3)
+        scrolledView.addPoint(value: 0.5)
+        scrolledView.delegate = self
+        //scrolledView.maxPoint = 0.7
         tableView.dataSource = self
+    }
+
+    func valueToPointDidChange(value: CGFloat) {
+      //   print(value)
+     }
+
+    func heightDidChange(height: CGFloat) {
+     //   print(height)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

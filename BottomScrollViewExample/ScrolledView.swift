@@ -8,32 +8,74 @@
 
 import UIKit
 
+enum Direction {
+    case up
+    case down
+}
+
+protocol ScrolledViewDelegate: class {
+    func valueToPointDidChange(value: CGFloat)
+    func heightDidChange(height: CGFloat)
+}
+
 class ScrolledView: UIView, UIGestureRecognizerDelegate {
     private let headerDefaultHeight: CGFloat = 44
-    private var containerView: UIView!
+
+    weak var delegate: ScrolledViewDelegate?
+
     var headerView: UIView!
+    
+    // if enabled container will be hidden
+    var hideOnTapSuperView: Bool = false
 
-    var points: [CGFloat] = []
+    var titleLabel: UILabel!
 
-    var openValue: CGFloat = 0 {
+    var maxPoint: CGFloat = 1 {
         didSet {
-            containerViewHeight.constant = self.bounds.height * openValue
+            if maxPoint > 1 {
+                rawPoints[1] = 1
+            } else {
+                rawPoints[1] = maxPoint
+            }
         }
     }
 
-    var hideOnTapSuperView: Bool = true
+    var minPoint: CGFloat = 0 {
+        didSet {
+            if minPoint < 0 {
+                rawPoints[0] = 0
+            } else {
+                rawPoints[0] = minPoint
+            }
+        }
+    }
 
-    var titleLabel: UILabel!
+    private var containerView: UIView!
     private var containerViewHeight: NSLayoutConstraint!
+
+    private var points: [CGFloat] { return rawPoints.sorted(by: <).filter {$0 <= 1.0 && $0 >= 0} }
+
     private var previousPoint = CGPoint(x: 0, y: 0)
     private var limit: CGFloat = 0
+    private var currentPointIndex = 0
+    private var rawPoints: [CGFloat] = []
 
-    private var topPoint: CGFloat {
-        return self.bounds.height - headerView.bounds.height
+    private var height: CGFloat {
+        get {
+            return containerViewHeight.constant
+        }
+        set {
+            containerViewHeight.constant = newValue
+            getProgressValue()
+            delegate?.heightDidChange(height: newValue)
+        }
     }
-    private var bottomPoint: CGFloat = 0
-    private var firstPoint: CGFloat!
-    private var secondPoint: CGFloat!
+
+    private var openValue: CGFloat = 0 {
+        didSet {
+            height = (self.bounds.height - headerView.bounds.height) * openValue
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,6 +89,7 @@ class ScrolledView: UIView, UIGestureRecognizerDelegate {
 
     private func commonInit() {
         createContainer()
+        rawPoints.append(contentsOf: [minPoint, maxPoint])
     }
 
     func addScroll( for scrollView: UIScrollView) {
@@ -56,7 +99,7 @@ class ScrolledView: UIView, UIGestureRecognizerDelegate {
     }
 
     func addPoint(value: CGFloat) {
-        points.append(value)
+        rawPoints.append(value)
     }
 
     override func addSubview(_ view: UIView) {
@@ -74,6 +117,8 @@ class ScrolledView: UIView, UIGestureRecognizerDelegate {
         return view
     }
 
+    //MARK: - Private
+
     private func createContainer() {
         guard containerView == nil else {return}
         containerView = UIView()
@@ -84,7 +129,7 @@ class ScrolledView: UIView, UIGestureRecognizerDelegate {
         containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         containerView.widthAnchor.constraint(equalToConstant: self.bounds.width).isActive = true
-        containerViewHeight = containerView.heightAnchor.constraint(equalToConstant: bottomPoint)
+        containerViewHeight = containerView.heightAnchor.constraint(equalToConstant: minPoint)
         containerViewHeight.isActive = true
         createHeader()
     }
@@ -120,40 +165,74 @@ class ScrolledView: UIView, UIGestureRecognizerDelegate {
         headerView.addSubview(titleLabel)
     }
 
-    //MARK: - Private
     private func changeSize(difference: CGFloat) {
-        if difference > 0, containerViewHeight.constant <= topPoint {
-            containerViewHeight.constant += difference
+        if difference > 0, height <= self.bounds.height {
+            if points.count > 2 {
+                guard height < getHeightForPoint(point: maxPoint) else {return}
+            }
+            height += difference
+            getCurrentPoint(direction: .up)
             return
         }
-        if difference < 0, containerViewHeight.constant >= bottomPoint {
-            containerViewHeight.constant += difference
+        if difference < 0, height >= minPoint {
+            if points.count > 2 {
+                 guard height > getHeightForPoint(point: minPoint) else {return}
+             }
+            height += difference
+            getCurrentPoint(direction: .down)
             return
         }
     }
 
-    private func moveToPoint() {
-      //  if containerViewHeight.constant < secondPoint - firstPoint / 2,
-      //      containerViewHeight.constant > firstPoint / 2 {
-      //      moveWithAnimation(point: firstPoint)
-      //  }
-     //   if containerViewHeight.constant < firstPoint / 2 {
-     //       moveWithAnimation(point: bottomPoint)
-     //   }
-     //   if containerViewHeight.constant > secondPoint - (secondPoint - firstPoint) / 2,
-     //       containerViewHeight.constant < topPoint - (topPoint - secondPoint) / 2 {
-     //       moveWithAnimation(point: secondPoint)
-    //    }
-    //    if containerViewHeight.constant > topPoint - (topPoint - secondPoint) / 2 {
-    //        moveWithAnimation(point: topPoint)
-    //    }
+    private func getCurrentPoint(direction: Direction) {
+        if direction == .up {
+            guard currentPointIndex != points.count - 1 else {return}
+            let nextPointHeight = getHeightForPoint(point: points[currentPointIndex + 1])
+            if height >= nextPointHeight {
+                currentPointIndex = currentPointIndex + 1
+            }
+        } else if currentPointIndex != 0 {
+            let nextPointHeight = getHeightForPoint(point: points[currentPointIndex])
+            if height <= nextPointHeight {
+                currentPointIndex = currentPointIndex - 1
+            }
+        }
     }
 
-    private func moveWithAnimation(point: CGFloat) {
-      //  UIView.animate(withDuration: 0.1, animations: {
-       //     self.containerViewHeight.constant = point
-      //      self.containerView.layoutIfNeeded()
-      //  })
+    private func getHeightForPoint(point: CGFloat) -> CGFloat {
+        return (self.bounds.height - headerView.bounds.height) * point
+    }
+
+    private func moveToPointWithAnimation() {
+        var nearestPoint = points[currentPointIndex]
+        var minValue: CGFloat = .infinity
+        for point in points {
+            let pointHeight = point * self.bounds.height
+            let difference = abs(pointHeight - height)
+            if difference < minValue {
+                minValue = difference
+                nearestPoint = point
+            }
+        }
+        UIView.animate(withDuration: 0.2, animations: {
+            self.openValue = nearestPoint
+            self.layoutIfNeeded()
+        })
+    }
+
+    private func getProgressValue() {
+        guard currentPointIndex != points.count - 1 else {return}
+        let currentPointHeight = getHeightForPoint(point: points[currentPointIndex])
+        let nextPointHeight = getHeightForPoint(point: points[currentPointIndex + 1])
+        let currentHeight = height - currentPointHeight
+        let length = (nextPointHeight - currentPointHeight)
+        var valueToNextPoint: CGFloat = 0
+        if height == getHeightForPoint(point: points[currentPointIndex]) {
+            valueToNextPoint = 0
+        } else {
+            valueToNextPoint = currentHeight / length
+        }
+        delegate?.valueToPointDidChange(value: valueToNextPoint)
     }
 
     // MARK: - Selectors
@@ -173,7 +252,7 @@ class ScrolledView: UIView, UIGestureRecognizerDelegate {
             }
             previousPoint = scrollView.panGestureRecognizer.location(in: self)
         } else if sender.state == .ended {
-         //   moveToPoint()
+            moveToPointWithAnimation()
         }
     }
 
@@ -187,7 +266,7 @@ class ScrolledView: UIView, UIGestureRecognizerDelegate {
             changeSize(difference: difference)
             previousPoint = sender.location(in: self)
         } else if sender.state == .ended {
-            //  moveToPoint()
+            moveToPointWithAnimation()
         }
     }
 

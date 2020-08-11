@@ -96,9 +96,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		676282D224D9A13000FB4C99 /* BottomScrollViewExample */ = {
+		676282D224D9A13000FB4C99 /* BottomCardView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 676282E724D9A13200FB4C99 /* Build configuration list for PBXNativeTarget "BottomScrollViewExample" */;
+			buildConfigurationList = 676282E724D9A13200FB4C99 /* Build configuration list for PBXNativeTarget "BottomCardView" */;
 			buildPhases = (
 				676282CF24D9A13000FB4C99 /* Sources */,
 				676282D024D9A13000FB4C99 /* Frameworks */,
@@ -108,7 +108,7 @@
 			);
 			dependencies = (
 			);
-			name = BottomScrollViewExample;
+			name = BottomCardView;
 			productName = BottomScrollViewExample;
 			productReference = 676282D324D9A13000FB4C99 /* BottomCardView.app */;
 			productType = "com.apple.product-type.application";
@@ -141,7 +141,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				676282D224D9A13000FB4C99 /* BottomScrollViewExample */,
+				676282D224D9A13000FB4C99 /* BottomCardView */,
 			);
 		};
 /* End PBXProject section */
@@ -352,7 +352,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		676282E724D9A13200FB4C99 /* Build configuration list for PBXNativeTarget "BottomScrollViewExample" */ = {
+		676282E724D9A13200FB4C99 /* Build configuration list for PBXNativeTarget "BottomCardView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				676282E824D9A13200FB4C99 /* Debug */,

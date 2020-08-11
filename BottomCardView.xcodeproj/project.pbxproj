@@ -24,7 +24,7 @@
 /* Begin PBXFileReference section */
 		673FCDE724E24846001AA466 /* BottomCardView+GestureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomCardView+GestureDelegate.swift"; sourceTree = "<group>"; };
 		673FCDE924E277C0001AA466 /* TouchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchState.swift; sourceTree = "<group>"; };
-		676282D324D9A13000FB4C99 /* BottomScrollViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomScrollViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		676282D324D9A13000FB4C99 /* BottomCardView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomCardView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		676282D624D9A13000FB4C99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		676282DA24D9A13000FB4C99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		676282DD24D9A13000FB4C99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		676282CA24D9A13000FB4C99 = {
 			isa = PBXGroup;
 			children = (
-				676282D524D9A13000FB4C99 /* BottomScrollViewExample */,
+				676282D524D9A13000FB4C99 /* BottomCardView */,
 				676282D424D9A13000FB4C99 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,24 +60,24 @@
 		676282D424D9A13000FB4C99 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				676282D324D9A13000FB4C99 /* BottomScrollViewExample.app */,
+				676282D324D9A13000FB4C99 /* BottomCardView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		676282D524D9A13000FB4C99 /* BottomScrollViewExample */ = {
+		676282D524D9A13000FB4C99 /* BottomCardView */ = {
 			isa = PBXGroup;
 			children = (
 				676282D624D9A13000FB4C99 /* AppDelegate.swift */,
 				676282DA24D9A13000FB4C99 /* ViewController.swift */,
 				676282DC24D9A13000FB4C99 /* Main.storyboard */,
-				6763DD9524E1A20C007AB2A0 /* ScrolledView */,
+				6763DD9524E1A20C007AB2A0 /* Sources */,
 				676282E424D9A13200FB4C99 /* Info.plist */,
 			);
-			path = BottomScrollViewExample;
+			path = BottomCardView;
 			sourceTree = "<group>";
 		};
-		6763DD9524E1A20C007AB2A0 /* ScrolledView */ = {
+		6763DD9524E1A20C007AB2A0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				676282EC24D9A33A00FB4C99 /* BottomCardView.swift */,
@@ -90,7 +90,7 @@
 				6763DD8924E1895E007AB2A0 /* Direction.swift */,
 				673FCDE924E277C0001AA466 /* TouchState.swift */,
 			);
-			path = ScrolledView;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,7 +110,7 @@
 			);
 			name = BottomScrollViewExample;
 			productName = BottomScrollViewExample;
-			productReference = 676282D324D9A13000FB4C99 /* BottomScrollViewExample.app */;
+			productReference = 676282D324D9A13000FB4C99 /* BottomCardView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -309,13 +309,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = BottomScrollViewExample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BottomCardView/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.BottomScrollViewExample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BottomCardView;
+				PRODUCT_NAME = BottomCardView;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -326,13 +327,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = BottomScrollViewExample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BottomCardView/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.BottomScrollViewExample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BottomCardView;
+				PRODUCT_NAME = BottomCardView;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

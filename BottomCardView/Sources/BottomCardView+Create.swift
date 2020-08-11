@@ -12,7 +12,7 @@ extension BottomCardView {
 
     func commonInit() {
         translatesAutoresizingMaskIntoConstraints = false
-        pointsRaw.append(contentsOf: [minPoint])
+        addPoint(value: minPoint)
         cornerRadius = 15
     }
 

@@ -9,14 +9,11 @@
 import UIKit
 
 class BottomCardView: UIView {
-    var containerView: UIView!
     var direction: Direction!
     var containerViewHeight: NSLayoutConstraint!
     var previousPoint = CGPoint(x: 0, y: 0)
-    var limit: CGFloat = 0
     var currentPointIndex = 0
     var pointsRaw: [CGFloat] = []
-    var containerRecognizer: UIPanGestureRecognizer!
 
     var points: [TargetPoint] {
         return pointsRaw.sorted(by: <)
@@ -25,28 +22,6 @@ class BottomCardView: UIView {
     var cornerRadius: CGFloat = 15 {
         didSet {
             createMask(radius: cornerRadius)
-        }
-    }
-
-    var min: CGFloat = 0 {
-        didSet {
-            if min < 0 {
-                pointsRaw[0] = 0
-            } else {
-                pointsRaw[0] = min
-            }
-        }
-    }
-
-    var minPoint: CGFloat {
-        get {
-            return min
-        }
-        set {
-            if newValue > min, height <= min {
-                height = newValue
-            }
-            min = newValue
         }
     }
 
@@ -63,6 +38,28 @@ class BottomCardView: UIView {
             getCurrentPoint()
             getNextPoint()
             delegate?.heightDidChange(height: newValue)
+        }
+    }
+
+    var minPoint: CGFloat {
+        get {
+            return min
+        }
+        set {
+            if newValue > min, height <= min {
+                height = newValue
+            }
+            min = newValue
+        }
+    }
+
+    private var min: CGFloat = 0 {
+        didSet {
+            if min < 0 {
+                pointsRaw[0] = 0
+            } else {
+                pointsRaw[0] = min
+            }
         }
     }
 
@@ -114,6 +111,7 @@ class BottomCardView: UIView {
         animation(to: nearestPoint)
     }
 
+    // toDO: need to change animation
     func animation(to: CGFloat) {
         UIView.animate(withDuration: 0.2, animations: {
             self.height = to

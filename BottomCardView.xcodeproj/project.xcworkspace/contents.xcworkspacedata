@@ -2,6 +2,5 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/gulkov/Documents/projects/BottomScrollViewExample/BottomCardView.xcodeproj">
-   </FileRef>
+ location = "self:/Users/gulkov/Documents/projects/BottomCardView/BottomCardView.xcodeproj">   </FileRef>
 </Workspace>

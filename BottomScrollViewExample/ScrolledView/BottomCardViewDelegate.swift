@@ -1,5 +1,5 @@
 //
-//  ScrolledViewDelegate.swift
+//  BottomCardViewDelegate.swift
 //  BottomScrollViewExample
 //
 //  Created by Gulkov on 10.08.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ScrolledViewDelegate: class {
+protocol BottomCardViewDelegate: class {
     func valueToPointDidChange(from: Int, to: Int, progress: CGFloat)
     func heightDidChange(height: CGFloat)
 }

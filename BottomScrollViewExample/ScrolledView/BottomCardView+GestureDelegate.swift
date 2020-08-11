@@ -1,5 +1,5 @@
 //
-//  ScrolledView+GestureDelegate.swift
+//  BottomCardView+GestureDelegate.swift
 //  BottomScrollViewExample
 //
 //  Created by Gulkov on 11.08.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ScrolledView: UIGestureRecognizerDelegate {
+extension BottomCardView: UIGestureRecognizerDelegate {
     
     override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         guard let scrollView = gestureRecognizer.view as? UIScrollView else {return false}

@@ -1,5 +1,5 @@
 //
-//  ScrolledView+Operations.swift
+//  BottomCardView+Operations.swift
 //  BottomScrollViewExample
 //
 //  Created by Gulkov on 10.08.2020.
@@ -10,7 +10,7 @@ import UIKit
 
 typealias TargetPoint = CGFloat
 
-extension ScrolledView {
+extension BottomCardView {
     public func addScroll( for scrollView: UIScrollView) {
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(scrollViewScrolled))
         gesture.delegate = self

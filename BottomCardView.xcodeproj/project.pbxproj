@@ -7,35 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		673FCDE824E24846001AA466 /* ScrolledView+GestureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673FCDE724E24846001AA466 /* ScrolledView+GestureDelegate.swift */; };
+		673FCDE824E24846001AA466 /* BottomCardView+GestureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673FCDE724E24846001AA466 /* BottomCardView+GestureDelegate.swift */; };
 		673FCDEA24E277C0001AA466 /* TouchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673FCDE924E277C0001AA466 /* TouchState.swift */; };
 		676282D724D9A13000FB4C99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676282D624D9A13000FB4C99 /* AppDelegate.swift */; };
 		676282DB24D9A13000FB4C99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676282DA24D9A13000FB4C99 /* ViewController.swift */; };
 		676282DE24D9A13000FB4C99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 676282DC24D9A13000FB4C99 /* Main.storyboard */; };
-		676282ED24D9A33A00FB4C99 /* ScrolledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676282EC24D9A33A00FB4C99 /* ScrolledView.swift */; };
-		6763DD8824E1884F007AB2A0 /* ScrolledViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD8724E1884F007AB2A0 /* ScrolledViewDelegate.swift */; };
+		676282ED24D9A33A00FB4C99 /* BottomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676282EC24D9A33A00FB4C99 /* BottomCardView.swift */; };
+		6763DD8824E1884F007AB2A0 /* BottomCardViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD8724E1884F007AB2A0 /* BottomCardViewDelegate.swift */; };
 		6763DD8A24E1895E007AB2A0 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD8924E1895E007AB2A0 /* Direction.swift */; };
-		6763DD8C24E18A9B007AB2A0 /* ScrolledView+TouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD8B24E18A9B007AB2A0 /* ScrolledView+TouchView.swift */; };
-		6763DD8E24E18B19007AB2A0 /* ScrolledView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD8D24E18B19007AB2A0 /* ScrolledView+Create.swift */; };
-		6763DD9024E18D0E007AB2A0 /* ScrolledView+Selectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD8F24E18D0E007AB2A0 /* ScrolledView+Selectors.swift */; };
-		6763DD9224E18EB1007AB2A0 /* ScrolledView+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD9124E18EB1007AB2A0 /* ScrolledView+Operations.swift */; };
+		6763DD8C24E18A9B007AB2A0 /* BottomCardView+TouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD8B24E18A9B007AB2A0 /* BottomCardView+TouchView.swift */; };
+		6763DD8E24E18B19007AB2A0 /* BottomCardView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD8D24E18B19007AB2A0 /* BottomCardView+Create.swift */; };
+		6763DD9024E18D0E007AB2A0 /* BottomCardView+Selectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD8F24E18D0E007AB2A0 /* BottomCardView+Selectors.swift */; };
+		6763DD9224E18EB1007AB2A0 /* BottomCardView+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD9124E18EB1007AB2A0 /* BottomCardView+Operations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		673FCDE724E24846001AA466 /* ScrolledView+GestureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrolledView+GestureDelegate.swift"; sourceTree = "<group>"; };
+		673FCDE724E24846001AA466 /* BottomCardView+GestureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomCardView+GestureDelegate.swift"; sourceTree = "<group>"; };
 		673FCDE924E277C0001AA466 /* TouchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchState.swift; sourceTree = "<group>"; };
 		676282D324D9A13000FB4C99 /* BottomScrollViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomScrollViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		676282D624D9A13000FB4C99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		676282DA24D9A13000FB4C99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		676282DD24D9A13000FB4C99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		676282E424D9A13200FB4C99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		676282EC24D9A33A00FB4C99 /* ScrolledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrolledView.swift; sourceTree = "<group>"; };
-		6763DD8724E1884F007AB2A0 /* ScrolledViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrolledViewDelegate.swift; sourceTree = "<group>"; };
+		676282EC24D9A33A00FB4C99 /* BottomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCardView.swift; sourceTree = "<group>"; };
+		6763DD8724E1884F007AB2A0 /* BottomCardViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCardViewDelegate.swift; sourceTree = "<group>"; };
 		6763DD8924E1895E007AB2A0 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
-		6763DD8B24E18A9B007AB2A0 /* ScrolledView+TouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrolledView+TouchView.swift"; sourceTree = "<group>"; };
-		6763DD8D24E18B19007AB2A0 /* ScrolledView+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrolledView+Create.swift"; sourceTree = "<group>"; };
-		6763DD8F24E18D0E007AB2A0 /* ScrolledView+Selectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrolledView+Selectors.swift"; sourceTree = "<group>"; };
-		6763DD9124E18EB1007AB2A0 /* ScrolledView+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrolledView+Operations.swift"; sourceTree = "<group>"; };
+		6763DD8B24E18A9B007AB2A0 /* BottomCardView+TouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomCardView+TouchView.swift"; sourceTree = "<group>"; };
+		6763DD8D24E18B19007AB2A0 /* BottomCardView+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomCardView+Create.swift"; sourceTree = "<group>"; };
+		6763DD8F24E18D0E007AB2A0 /* BottomCardView+Selectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomCardView+Selectors.swift"; sourceTree = "<group>"; };
+		6763DD9124E18EB1007AB2A0 /* BottomCardView+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomCardView+Operations.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,13 +80,13 @@
 		6763DD9524E1A20C007AB2A0 /* ScrolledView */ = {
 			isa = PBXGroup;
 			children = (
-				676282EC24D9A33A00FB4C99 /* ScrolledView.swift */,
-				6763DD8724E1884F007AB2A0 /* ScrolledViewDelegate.swift */,
-				6763DD8B24E18A9B007AB2A0 /* ScrolledView+TouchView.swift */,
-				6763DD8D24E18B19007AB2A0 /* ScrolledView+Create.swift */,
-				6763DD8F24E18D0E007AB2A0 /* ScrolledView+Selectors.swift */,
-				6763DD9124E18EB1007AB2A0 /* ScrolledView+Operations.swift */,
-				673FCDE724E24846001AA466 /* ScrolledView+GestureDelegate.swift */,
+				676282EC24D9A33A00FB4C99 /* BottomCardView.swift */,
+				6763DD8724E1884F007AB2A0 /* BottomCardViewDelegate.swift */,
+				6763DD8B24E18A9B007AB2A0 /* BottomCardView+TouchView.swift */,
+				6763DD8D24E18B19007AB2A0 /* BottomCardView+Create.swift */,
+				6763DD8F24E18D0E007AB2A0 /* BottomCardView+Selectors.swift */,
+				6763DD9124E18EB1007AB2A0 /* BottomCardView+Operations.swift */,
+				673FCDE724E24846001AA466 /* BottomCardView+GestureDelegate.swift */,
 				6763DD8924E1895E007AB2A0 /* Direction.swift */,
 				673FCDE924E277C0001AA466 /* TouchState.swift */,
 			);
@@ -128,7 +128,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 676282CE24D9A13000FB4C99 /* Build configuration list for PBXProject "BottomScrollViewExample" */;
+			buildConfigurationList = 676282CE24D9A13000FB4C99 /* Build configuration list for PBXProject "BottomCardView" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -162,17 +162,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6763DD9224E18EB1007AB2A0 /* ScrolledView+Operations.swift in Sources */,
+				6763DD9224E18EB1007AB2A0 /* BottomCardView+Operations.swift in Sources */,
 				676282DB24D9A13000FB4C99 /* ViewController.swift in Sources */,
-				6763DD9024E18D0E007AB2A0 /* ScrolledView+Selectors.swift in Sources */,
+				6763DD9024E18D0E007AB2A0 /* BottomCardView+Selectors.swift in Sources */,
 				676282D724D9A13000FB4C99 /* AppDelegate.swift in Sources */,
-				6763DD8E24E18B19007AB2A0 /* ScrolledView+Create.swift in Sources */,
-				676282ED24D9A33A00FB4C99 /* ScrolledView.swift in Sources */,
+				6763DD8E24E18B19007AB2A0 /* BottomCardView+Create.swift in Sources */,
+				676282ED24D9A33A00FB4C99 /* BottomCardView.swift in Sources */,
 				673FCDEA24E277C0001AA466 /* TouchState.swift in Sources */,
 				6763DD8A24E1895E007AB2A0 /* Direction.swift in Sources */,
-				6763DD8C24E18A9B007AB2A0 /* ScrolledView+TouchView.swift in Sources */,
-				6763DD8824E1884F007AB2A0 /* ScrolledViewDelegate.swift in Sources */,
-				673FCDE824E24846001AA466 /* ScrolledView+GestureDelegate.swift in Sources */,
+				6763DD8C24E18A9B007AB2A0 /* BottomCardView+TouchView.swift in Sources */,
+				6763DD8824E1884F007AB2A0 /* BottomCardViewDelegate.swift in Sources */,
+				673FCDE824E24846001AA466 /* BottomCardView+GestureDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +341,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		676282CE24D9A13000FB4C99 /* Build configuration list for PBXProject "BottomScrollViewExample" */ = {
+		676282CE24D9A13000FB4C99 /* Build configuration list for PBXProject "BottomCardView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				676282E524D9A13200FB4C99 /* Debug */,

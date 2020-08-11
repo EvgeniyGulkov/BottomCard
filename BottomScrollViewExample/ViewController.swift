@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, ScrolledViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, BottomCardViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var scrolledView: ScrolledView!
+    @IBOutlet weak var bottomCardView: BottomCardView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textView2: UITextView!
     @IBOutlet weak var textView3: UITextView!
@@ -19,14 +19,14 @@ class ViewController: UIViewController, UITableViewDataSource, ScrolledViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        scrolledView.addPoint(value: 600)
-        scrolledView.addPoint(value: 400)
-        scrolledView.minPoint = 20
-        scrolledView.delegate = self
+        bottomCardView.addPoint(value: 600)
+        bottomCardView.addPoint(value: 400)
+        bottomCardView.minPoint = 20
+        bottomCardView.delegate = self
 
-        scrolledView.addScroll(for: textView)
-        scrolledView.addScroll(for: textView2)
-        scrolledView.addScroll(for: textView3)
+        bottomCardView.addScroll(for: textView)
+        bottomCardView.addScroll(for: textView2)
+        bottomCardView.addScroll(for: textView3)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

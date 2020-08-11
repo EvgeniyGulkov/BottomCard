@@ -1,5 +1,5 @@
 //
-//  ScrolledView+HitTest.swift
+//  BottomCardView+HitTest.swift
 //  BottomScrollViewExample
 //
 //  Created by Gulkov on 10.08.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ScrolledView {
+extension BottomCardView {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let point = touches.first!.location(in: superview!)

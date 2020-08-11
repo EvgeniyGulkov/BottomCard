@@ -1,5 +1,5 @@
 //
-//  ScrolledView+Selectors.swift
+//  BottomCardView+Selectors.swift
 //  BottomScrollViewExample
 //
 //  Created by Gulkov on 10.08.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ScrolledView {
+extension BottomCardView {
 
     @objc
     func scrollViewScrolled(_ sender: UIPanGestureRecognizer) {

@@ -30,7 +30,7 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTK-dA-Mgl" customClass="ScrolledView" customModule="BottomScrollViewExample" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTK-dA-Mgl" customClass="BottomCardView" customModule="BottomScrollViewExample" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMg-hS-53S">
@@ -99,7 +99,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="scrolledView" destination="mTK-dA-Mgl" id="y8u-nk-iYU"/>
+                        <outlet property="bottomCardView" destination="mTK-dA-Mgl" id="y8u-nk-iYU"/>
                         <outlet property="tableView" destination="rG8-4s-szb" id="m8Z-OT-S4e"/>
                         <outlet property="textView" destination="AqO-9G-McP" id="Zw4-9B-HOe"/>
                         <outlet property="textView2" destination="Ns4-ab-fQp" id="DC5-Nn-rme"/>

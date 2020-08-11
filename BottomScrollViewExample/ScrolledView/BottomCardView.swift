@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScrolledView: UIView {
+class BottomCardView: UIView {
     var containerView: UIView!
     var direction: Direction!
     var containerViewHeight: NSLayoutConstraint!
@@ -20,6 +20,12 @@ class ScrolledView: UIView {
 
     var points: [TargetPoint] {
         return pointsRaw.sorted(by: <)
+    }
+
+    var cornerRadius: CGFloat = 15 {
+        didSet {
+            createMask(radius: cornerRadius)
+        }
     }
 
     var min: CGFloat = 0 {
@@ -60,7 +66,7 @@ class ScrolledView: UIView {
         }
     }
 
-    weak var delegate: ScrolledViewDelegate?
+    weak var delegate: BottomCardViewDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)

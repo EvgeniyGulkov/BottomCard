@@ -1,5 +1,5 @@
 //
-//  ScrolledView+Init.swift
+//  BottomCardView+Init.swift
 //  BottomScrollViewExample
 //
 //  Created by Gulkov on 10.08.2020.
@@ -8,18 +8,18 @@
 
 import UIKit
 
-extension ScrolledView {
-    
+extension BottomCardView {
+
     func commonInit() {
-        createContainer()
+        translatesAutoresizingMaskIntoConstraints = false
         pointsRaw.append(contentsOf: [minPoint])
+        cornerRadius = 15
     }
 
-    private func createContainer() {
-        translatesAutoresizingMaskIntoConstraints = false
+    func createMask(radius: CGFloat) {
         let maskPath = UIBezierPath(roundedRect: bounds,
                                     byRoundingCorners: [.topRight, .topLeft],
-                                    cornerRadii: CGSize(width: 15, height: 15))
+                                    cornerRadii: CGSize(width: radius, height: radius))
         let shape = CAShapeLayer()
         shape.path = maskPath.cgPath
         layer.mask = shape

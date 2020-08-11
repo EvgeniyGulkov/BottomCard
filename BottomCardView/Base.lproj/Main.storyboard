@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="BottomScrollViewExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="BottomCardView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,7 +30,7 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTK-dA-Mgl" customClass="BottomCardView" customModule="BottomScrollViewExample" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTK-dA-Mgl" customClass="BottomCardView" customModule="BottomCardView" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMg-hS-53S">
@@ -87,9 +87,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mTK-dA-Mgl" secondAttribute="trailing" id="7hB-Ke-040"/>
+                            <constraint firstAttribute="trailing" secondItem="mTK-dA-Mgl" secondAttribute="trailing" id="7hB-Ke-040"/>
                             <constraint firstItem="rG8-4s-szb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AwV-Nx-eOD"/>
-                            <constraint firstItem="mTK-dA-Mgl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IBP-Hl-xUg"/>
+                            <constraint firstItem="mTK-dA-Mgl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IBP-Hl-xUg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mTK-dA-Mgl" secondAttribute="bottom" id="Q14-lK-46f"/>
                             <constraint firstItem="mTK-dA-Mgl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Uav-3l-7cJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rG8-4s-szb" secondAttribute="trailing" id="ojM-td-uGA"/>

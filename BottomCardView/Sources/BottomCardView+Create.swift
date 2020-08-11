@@ -17,7 +17,7 @@ extension BottomCardView {
     }
 
     func createMask(radius: CGFloat) {
-        let maskPath = UIBezierPath(roundedRect: bounds,
+        let maskPath = UIBezierPath(roundedRect: UIScreen.main.bounds,
                                     byRoundingCorners: [.topRight, .topLeft],
                                     cornerRadii: CGSize(width: radius, height: radius))
         let shape = CAShapeLayer()

@@ -42,7 +42,7 @@ class ViewController: UIViewController, UITableViewDataSource, BottomCardViewDel
     func valueToPointDidChange(from: Int, to: Int, progress: CGFloat) {
         print("from point: \(from),to point: \(to), with progress \(progress)")
     }
-    
+
     func heightDidChange(height: CGFloat) {
     }
 }

@@ -33,6 +33,9 @@ class BottomCardView: UIView {
             let minY = UIScreen.main.bounds.height - newValue
             self.frame.origin.y = minY
             self.frame.size.height = newValue
+            self.getCurrentPoint()
+            self.getNextPoint()
+            self.delegate?.heightDidChange(height: newValue)
         }
     }
 

@@ -11,9 +11,10 @@ import UIKit
 extension BottomCardView {
 
     func commonInit() {
-        translatesAutoresizingMaskIntoConstraints = false
+        translatesAutoresizingMaskIntoConstraints = true
         addPoint(value: minPoint)
         cornerRadius = 15
+        height = minPoint
     }
 
     func createMask(radius: CGFloat) {
@@ -23,12 +24,5 @@ extension BottomCardView {
         let shape = CAShapeLayer()
         shape.path = maskPath.cgPath
         layer.mask = shape
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        superview?.constraints.first(where: {$0.firstAnchor == topAnchor})?.isActive = false
-        containerViewHeight = heightAnchor.constraint(equalToConstant: minPoint)
-        containerViewHeight.isActive = true
     }
 }

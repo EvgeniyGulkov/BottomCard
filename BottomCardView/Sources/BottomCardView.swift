@@ -7,10 +7,10 @@
 //
 
 import UIKit
+import pop
 
 class BottomCardView: UIView {
     var direction: Direction!
-    var containerViewHeight: NSLayoutConstraint!
     var previousPoint = CGPoint(x: 0, y: 0)
     var currentPointIndex = 0
     var pointsRaw: [CGFloat] = []
@@ -27,17 +27,12 @@ class BottomCardView: UIView {
 
     var height: CGFloat {
         get {
-            return containerViewHeight.constant
+            return self.frame.height
         }
         set {
-            if newValue >= points.last! {
-                containerViewHeight.constant = points.last!
-            } else {
-                containerViewHeight.constant = newValue
-            }
-            getCurrentPoint()
-            getNextPoint()
-            delegate?.heightDidChange(height: newValue)
+            let minY = UIScreen.main.bounds.height - newValue
+            self.frame.origin.y = minY
+            self.frame.size.height = newValue
         }
     }
 
@@ -76,11 +71,17 @@ class BottomCardView: UIView {
     }
 
     func changeSize(difference: CGFloat) {
+        removeAllAnimations()
         direction = difference > 0 ? .up : .down
-        if height >= minPoint {
+        if height >= points.last! {
+            height += difference / 5
+        } else {
             height += difference
-            return
         }
+    }
+
+    func removeAllAnimations() {
+        pop_removeAllAnimations()
     }
 
     func getCurrentPoint() {
@@ -113,10 +114,12 @@ class BottomCardView: UIView {
 
     // toDO: need to change animation
     func animation(to: CGFloat) {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.height = to
-            self.superview!.layoutIfNeeded()
-        })
+        let spring = POPSpringAnimation(propertyNamed: kPOPViewFrame)
+        let minY: CGFloat = UIScreen.main.bounds.height - to
+        spring?.toValue = CGRect(x: 0, y: minY, width: frame.size.width, height: to)
+        spring?.springBounciness = 20
+        spring?.springSpeed = 30
+        pop_add(spring, forKey: "move")
     }
 
     func getNextPoint() {

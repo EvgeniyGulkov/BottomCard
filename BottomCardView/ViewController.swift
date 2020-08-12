@@ -21,7 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, BottomCardViewDel
         tableView.dataSource = self
         bottomCardView.addPoint(value: 600)
         bottomCardView.addPoint(value: 400)
-        bottomCardView.minPoint = 20
+        bottomCardView.minPoint = 30
         bottomCardView.delegate = self
 
         bottomCardView.addScroll(for: textView)

@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController, UITableViewDataSource, BottomCardViewDelegate {
+class ViewController: UIViewController, BottomCardViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomCardView: BottomCardView!
@@ -21,32 +21,16 @@ class ViewController: UIViewController, UITableViewDataSource, BottomCardViewDel
         super.viewDidLoad()
         tableView.dataSource = self
         tableViewInBottom.dataSource = self
+        setupBottomCard()
+    }
+
+    func setupBottomCard() {
         bottomCardView.addPoint(value: 400)
+        bottomCardView.addPoint(value: .infinity)
         bottomCardView.minPoint = 30
         bottomCardView.delegate = self
         bottomCardView.cornerRadius = 20
         bottomCardView.addScroll(for: tableViewInBottom)
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        bottomCardView.addPoint(value: self.view.bounds.height - view.safeAreaInsets.top + headerHeight.constant)
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = String(Int.random(in: 0...100))
-        return cell
-    }
-
-    func viewHeightDidChange(height: CGFloat) {
-    }
-    
-    func springAnimationComplete(inPoint: Int, onHeight: CGFloat) {
     }
 
     func valueToPointDidChange(from: Int, to: Int, progress: CGFloat) {

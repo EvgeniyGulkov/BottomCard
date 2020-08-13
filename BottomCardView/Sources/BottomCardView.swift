@@ -10,7 +10,6 @@ import UIKit
 import pop
 
 class BottomCardView: UIView {
-
     public var bounces: CGFloat = 5
     public var animationSpeed: CGFloat = 10
     public var currentPointIndex = 0
@@ -27,11 +26,11 @@ class BottomCardView: UIView {
         }
     }
 
-    var points: [TargetPoint] {
+    public var points: [TargetPoint] {
         return pointsRaw.sorted(by: <)
     }
 
-    var cornerRadius: CGFloat = 15 {
+    public var cornerRadius: CGFloat = 15 {
         didSet {
             createMask(radius: cornerRadius)
         }
@@ -61,13 +60,15 @@ class BottomCardView: UIView {
         }
     }
 
-    var minPoint: CGFloat {
+    public var minPoint: CGFloat {
         get {
             return min
         }
         set {
             min = newValue
-            height = newValue
+            if height < newValue {
+                height = newValue
+            }
         }
     }
 
@@ -170,6 +171,8 @@ class BottomCardView: UIView {
         } else {
             valueToNextPoint = currentHeight / length
         }
-        delegate?.valueToPointDidChange(from: currentPointIndex, to: nextPointIndex, progress: valueToNextPoint)
+        delegate?.progressToPointDidChange(from: currentPointIndex,
+                                           to: nextPointIndex,
+                                           progress: valueToNextPoint)
     }
 }

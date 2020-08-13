@@ -7,26 +7,30 @@
 //
 
 import UIKit
+import MapKit
 
 class ViewController: UIViewController, UITableViewDataSource, BottomCardViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomCardView: BottomCardView!
-    @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var textView2: UITextView!
-    @IBOutlet weak var textView3: UITextView!
+    @IBOutlet weak var tableViewInBottom: UITableView!
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var headerHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        bottomCardView.addPoint(value: 600)
+        tableViewInBottom.dataSource = self
         bottomCardView.addPoint(value: 400)
-        bottomCardView.minPoint = 30
+        bottomCardView.minPoint = 50
         bottomCardView.delegate = self
+    
+        bottomCardView.addScroll(for: tableViewInBottom)
+    }
 
-        bottomCardView.addScroll(for: textView)
-        bottomCardView.addScroll(for: textView2)
-        bottomCardView.addScroll(for: textView3)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        bottomCardView.addPoint(value: self.view.bounds.height - view.safeAreaInsets.top + headerHeight.constant)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,7 +44,7 @@ class ViewController: UIViewController, UITableViewDataSource, BottomCardViewDel
     }
 
     func valueToPointDidChange(from: Int, to: Int, progress: CGFloat) {
-        print("from point: \(from),to point: \(to), with progress \(progress)")
+     //  print("from point: \(from),to point: \(to), with progress \(progress)")
     }
 
     func heightDidChange(height: CGFloat) {

@@ -14,6 +14,16 @@ class BottomCardView: UIView {
     var previousPoint = CGPoint(x: 0, y: 0)
     var currentPointIndex = 0
     var pointsRaw: [CGFloat] = []
+    var bounces: CGFloat = 5
+    var springAnimationSpeed: CGFloat = 10
+
+    var viewInsets: UIEdgeInsets?
+
+    var width: CGFloat = 0 {
+        didSet {
+            createMask(radius: cornerRadius)
+        }
+    }
 
     var points: [TargetPoint] {
         return pointsRaw.sorted(by: <)
@@ -27,15 +37,19 @@ class BottomCardView: UIView {
 
     var height: CGFloat {
         get {
-            return self.frame.height
+            return self.frame.size.height
         }
         set {
-            let minY = UIScreen.main.bounds.height - newValue
-            self.frame.origin.y = minY
-            self.frame.size.height = newValue
-            self.getCurrentPoint()
-            self.getNextPoint()
-            self.delegate?.heightDidChange(height: newValue)
+            let minY = UIScreen.main.bounds.height - newValue - (viewInsets?.bottom ?? 0)
+            if minY <= 0 {
+                self.frame.origin.y = 0
+                if height < UIScreen.main.bounds.height - (viewInsets?.bottom ?? 0) {
+                    self.frame.size.height = newValue
+                }
+            } else {
+                self.frame.origin.y = minY
+                self.frame.size.height = newValue
+            }
         }
     }
 
@@ -115,14 +129,18 @@ class BottomCardView: UIView {
         animation(to: nearestPoint)
     }
 
-    // toDO: need to change animation
     func animation(to: CGFloat) {
         let spring = POPSpringAnimation(propertyNamed: kPOPViewFrame)
-        let minY: CGFloat = UIScreen.main.bounds.height - to
-        spring?.toValue = CGRect(x: 0, y: minY, width: frame.size.width, height: to)
-        spring?.springBounciness = 20
-        spring?.springSpeed = 30
-        pop_add(spring, forKey: "move")
+        var minY: CGFloat = UIScreen.main.bounds.height - to - (viewInsets?.bottom ?? 0)
+        var height = to
+        if minY <= 0 {
+            minY = 0
+            height = to - (viewInsets?.bottom ?? 0)
+        }
+        spring?.toValue = CGRect(x: frame.minX, y: minY, width: frame.size.width, height: height)
+        spring?.springBounciness = bounces
+        spring?.springSpeed = springAnimationSpeed
+        pop_add(spring, forKey: "moveTopPosition")
     }
 
     func getNextPoint() {

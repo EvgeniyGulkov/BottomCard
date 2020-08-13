@@ -11,7 +11,8 @@ import UIKit
 extension BottomCardView: UIGestureRecognizerDelegate {
     
     override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        previousPoint = gestureRecognizer.location(in: superview!)
+        guard let superView = superview else {return false}
+        previousPoint = gestureRecognizer.location(in: superView)
         return true
     }
 

@@ -12,7 +12,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let controller = sb.instantiateViewController(withIdentifier: "ViewController")

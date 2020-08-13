@@ -12,17 +12,17 @@ extension BottomCardView {
 
     @objc
     func scrollViewScrolled(_ sender: UIPanGestureRecognizer) {
-        guard let scrollView = sender.view as? UIScrollView else {return}
+        guard let scrollView = sender.view as? UIScrollView, let superView = superview else {return}
         if sender.state == .changed {
             let limit = scrollView.contentSize.height - scrollView.visibleSize.height
-            let point = scrollView.panGestureRecognizer.location(in: superview!)
+            let point = scrollView.panGestureRecognizer.location(in: superView)
             let difference = previousPoint.y - point.y
             if (round(scrollView.contentOffset.y) >= round(limit) && difference > 0) ||
                 (round(scrollView.contentOffset.y) <= 0 && difference < 0)
                 {
                 changeSize(difference: difference)
             }
-            previousPoint = scrollView.panGestureRecognizer.location(in: superview!)
+            previousPoint = scrollView.panGestureRecognizer.location(in: superView)
         } else if sender.state == .ended {
             moveToPointWithAnimation()
         }
@@ -40,5 +40,4 @@ extension BottomCardView {
             moveToPointWithAnimation()
         }
     }
-
 }

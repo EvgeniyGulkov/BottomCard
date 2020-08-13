@@ -10,5 +10,6 @@ import UIKit
 
 protocol BottomCardViewDelegate: class {
     func valueToPointDidChange(from: Int, to: Int, progress: CGFloat)
-    func heightDidChange(height: CGFloat)
+    func viewHeightDidChange(height: CGFloat)
+    func springAnimationComplete(inPoint: Int, onHeight: CGFloat)
 }

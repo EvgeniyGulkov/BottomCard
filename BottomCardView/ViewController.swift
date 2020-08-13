@@ -14,17 +14,17 @@ class ViewController: UIViewController, UITableViewDataSource, BottomCardViewDel
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomCardView: BottomCardView!
     @IBOutlet weak var tableViewInBottom: UITableView!
-    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var headerHeight: NSLayoutConstraint!
+    @IBOutlet weak var headerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableViewInBottom.dataSource = self
         bottomCardView.addPoint(value: 400)
-        bottomCardView.minPoint = 50
+        bottomCardView.minPoint = 30
         bottomCardView.delegate = self
-    
+        bottomCardView.cornerRadius = 20
         bottomCardView.addScroll(for: tableViewInBottom)
     }
 
@@ -43,10 +43,20 @@ class ViewController: UIViewController, UITableViewDataSource, BottomCardViewDel
         return cell
     }
 
-    func valueToPointDidChange(from: Int, to: Int, progress: CGFloat) {
-     //  print("from point: \(from),to point: \(to), with progress \(progress)")
+    func viewHeightDidChange(height: CGFloat) {
+    }
+    
+    func springAnimationComplete(inPoint: Int, onHeight: CGFloat) {
     }
 
-    func heightDidChange(height: CGFloat) {
+    func valueToPointDidChange(from: Int, to: Int, progress: CGFloat) {
+        if from == 0, to == 1 {
+            let color = headerView.backgroundColor
+            headerView.backgroundColor = color?.withAlphaComponent(1 - progress)
+        }
+        if from == 1, to == 0 {
+            let color = headerView.backgroundColor
+            headerView.backgroundColor = color?.withAlphaComponent(progress)
+        }
     }
 }

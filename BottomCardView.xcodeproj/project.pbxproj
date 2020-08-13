@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6731033724E56AC1007FF476 /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6731033624E56AC1007FF476 /* ViewAnimator.swift */; };
 		673FCDE824E24846001AA466 /* BottomCardView+GestureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673FCDE724E24846001AA466 /* BottomCardView+GestureDelegate.swift */; };
 		673FCDEA24E277C0001AA466 /* TouchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673FCDE924E277C0001AA466 /* TouchState.swift */; };
 		676282D724D9A13000FB4C99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676282D624D9A13000FB4C99 /* AppDelegate.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		63B2AE289596B6438941618B /* Pods-BottomCardView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BottomCardView.debug.xcconfig"; path = "Target Support Files/Pods-BottomCardView/Pods-BottomCardView.debug.xcconfig"; sourceTree = "<group>"; };
+		6731033624E56AC1007FF476 /* ViewAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAnimator.swift; sourceTree = "<group>"; };
 		673FCDE724E24846001AA466 /* BottomCardView+GestureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomCardView+GestureDelegate.swift"; sourceTree = "<group>"; };
 		673FCDE924E277C0001AA466 /* TouchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchState.swift; sourceTree = "<group>"; };
 		676282D324D9A13000FB4C99 /* BottomCardView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomCardView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,7 @@
 				6763DD8F24E18D0E007AB2A0 /* BottomCardView+Selectors.swift */,
 				6763DD9124E18EB1007AB2A0 /* BottomCardView+Operations.swift */,
 				673FCDE724E24846001AA466 /* BottomCardView+GestureDelegate.swift */,
+				6731033624E56AC1007FF476 /* ViewAnimator.swift */,
 				6763DD8924E1895E007AB2A0 /* Direction.swift */,
 				673FCDE924E277C0001AA466 /* TouchState.swift */,
 			);
@@ -241,6 +244,7 @@
 				6763DD8C24E18A9B007AB2A0 /* BottomCardView+TouchView.swift in Sources */,
 				6763DD8824E1884F007AB2A0 /* BottomCardViewDelegate.swift in Sources */,
 				673FCDE824E24846001AA466 /* BottomCardView+GestureDelegate.swift in Sources */,
+				6731033724E56AC1007FF476 /* ViewAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

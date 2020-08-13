@@ -18,6 +18,19 @@ extension BottomCardView {
     }
 
     public func addPoint(value: TargetPoint) {
-        pointsRaw.append(value)
+        let maxHeight = UIScreen.main.bounds.height - (viewInsets?.bottom ?? 0)
+        if value > maxHeight {
+            pointsRaw.append(maxHeight)
+        } else {
+            pointsRaw.append(value)
+        }
+    }
+
+    public func moveToPoint(index: Int) {
+        height = points[index]
+    }
+
+    public func setViewHeight(value: CGFloat) {
+        height = value
     }
 }

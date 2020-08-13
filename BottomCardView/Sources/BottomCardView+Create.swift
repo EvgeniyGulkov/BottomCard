@@ -12,15 +12,14 @@ extension BottomCardView {
 
     func commonInit() {
         translatesAutoresizingMaskIntoConstraints = true
-        autoresizingMask = [.flexibleBottomMargin, .flexibleHeight, .flexibleLeftMargin, .flexibleRightMargin, .flexibleTopMargin, .flexibleWidth]
+        autoresizingMask = [.flexibleLeftMargin, .flexibleWidth, .flexibleTopMargin, .flexibleHeight, .flexibleRightMargin]
         addPoint(value: minPoint)
         height = minPoint
     }
 
     func createMask(radius: CGFloat) {
-        guard let superView = superview else {return}
         let tempHeight = height
-        height = superView.bounds.height
+        height = UIScreen.main.bounds.height
         let maskPath = UIBezierPath(roundedRect: bounds,
                                     byRoundingCorners: [.topRight, .topLeft],
                                     cornerRadii: CGSize(width: radius, height: radius))
@@ -39,6 +38,6 @@ extension BottomCardView {
         }
         self.getCurrentPoint()
         self.getNextPoint()
-        self.delegate?.heightDidChange(height: height)
+        self.delegate?.viewHeightDidChange(height: height)
     }
 }

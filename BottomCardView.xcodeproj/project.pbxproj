@@ -58,6 +58,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6731033A24E59193007FF476 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				676282D624D9A13000FB4C99 /* AppDelegate.swift */,
+				676282DA24D9A13000FB4C99 /* ViewController.swift */,
+				6731033824E58AB0007FF476 /* ViewController+DataSource.swift */,
+				676282DC24D9A13000FB4C99 /* Main.storyboard */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
 		676282CA24D9A13000FB4C99 = {
 			isa = PBXGroup;
 			children = (
@@ -79,10 +90,7 @@
 		676282D524D9A13000FB4C99 /* BottomCardView */ = {
 			isa = PBXGroup;
 			children = (
-				676282D624D9A13000FB4C99 /* AppDelegate.swift */,
-				676282DA24D9A13000FB4C99 /* ViewController.swift */,
-				6731033824E58AB0007FF476 /* ViewController+DataSource.swift */,
-				676282DC24D9A13000FB4C99 /* Main.storyboard */,
+				6731033A24E59193007FF476 /* Example */,
 				6763DD9524E1A20C007AB2A0 /* Sources */,
 				676282E424D9A13200FB4C99 /* Info.plist */,
 			);
@@ -391,7 +399,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BottomCardView;
 				PRODUCT_NAME = BottomCardView;
 				SWIFT_VERSION = 5.0;
@@ -410,7 +418,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BottomCardView;
 				PRODUCT_NAME = BottomCardView;
 				SWIFT_VERSION = 5.0;

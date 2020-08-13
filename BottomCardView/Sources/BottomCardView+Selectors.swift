@@ -13,7 +13,9 @@ extension BottomCardView {
     @objc
     func scrollViewScrolled(_ sender: UIPanGestureRecognizer) {
         guard let scrollView = sender.view as? UIScrollView, let superView = superview else {return}
-        if sender.state == .changed {
+        if sender.state == .began {
+            previousPoint = sender.location(in: superView)
+        } else if sender.state == .changed {
             let visibleHeight = scrollView.frame.size.height - (scrollView.contentInset.top + scrollView.adjustedContentInset.top) - (scrollView.contentInset.bottom + scrollView.adjustedContentInset.bottom)
             let limit = scrollView.contentSize.height - visibleHeight
             let point = scrollView.panGestureRecognizer.location(in: superView)

@@ -9,7 +9,7 @@
 import UIKit
 import pop
 
-class ViewAnimator {
+public class ViewAnimator {
     static func topSpringAnimation(view: UIView, to: CGFloat, bottomInset: CGFloat, bounces: CGFloat, speed: CGFloat) {
         let spring = POPSpringAnimation(propertyNamed: kPOPViewFrame)
         var minY: CGFloat = UIScreen.main.bounds.height - to - bottomInset

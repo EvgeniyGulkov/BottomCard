@@ -29,7 +29,7 @@ extension BottomCardView {
         height = tempHeight
     }
 
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         if viewInsets == nil {
             viewInsets = safeAreaInsets
         }

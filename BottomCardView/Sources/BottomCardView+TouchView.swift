@@ -11,19 +11,19 @@ import MapKit
 
 extension BottomCardView {
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let superView = superview else {return}
         let point = touches.first!.location(in: superView)
         viewTouched(state: .began, point: point)
     }
 
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    public override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let superView = superview, !touchInMapView(touch: touches.first!) else {return}
         let point = touches.first!.location(in: superView)
         viewTouched(state: .moved, point: point)
     }
 
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let superView = superview else {return}
         let point = touches.first!.location(in: superView)
         viewTouched(state: .ended, point: point)

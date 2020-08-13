@@ -9,7 +9,7 @@
 import UIKit
 import pop
 
-class BottomCardView: UIView {
+public class BottomCardView: UIView {
     public var bounces: CGFloat = 5
     public var animationSpeed: CGFloat = 10
     public var currentPointIndex = 0

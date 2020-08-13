@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias TargetPoint = CGFloat
+public typealias TargetPoint = CGFloat
 
 extension BottomCardView {
     public func addScroll( for scrollView: UIScrollView) {

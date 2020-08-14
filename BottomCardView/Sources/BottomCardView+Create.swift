@@ -15,6 +15,7 @@ extension BottomCardView {
         autoresizingMask = [.flexibleLeftMargin, .flexibleWidth, .flexibleTopMargin, .flexibleHeight, .flexibleRightMargin]
         addPoint(value: minPoint)
         height = minPoint
+        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
     }
 
     func createMask(radius: CGFloat) {
@@ -39,15 +40,16 @@ extension BottomCardView {
         self.getCurrentPoint()
         self.getNextPoint()
         self.delegate?.viewHeightDidChange(height: height)
-        self.disableConstraints()
+        self.changeConstraintPriority()
     }
 
-    private func disableConstraints() {
-        superview?.constraints.filter {
+    private func changeConstraintPriority() {
+        let constraints = superview?.constraints.filter {
             $0.firstAnchor == topAnchor ||
                 $0.secondAnchor == topAnchor ||
                 $0.firstAnchor == bottomAnchor ||
                 $0.secondAnchor == bottomAnchor
-        }.forEach {$0.isActive = false}
+        }
+        constraints?.forEach {$0.priority = UILayoutPriority(rawValue: 1)}
     }
 }

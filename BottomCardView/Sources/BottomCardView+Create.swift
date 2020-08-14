@@ -38,8 +38,9 @@ extension BottomCardView {
         }
         self.getCurrentPoint()
         self.getNextPoint()
-        self.delegate?.viewHeightDidChange(height: height)
+        self.delegate?.bottomCardView(viewHeightDidChange: height)
         self.changeConstraintPriority()
+        print(frame.maxY)
     }
 
     private func changeConstraintPriority() {
@@ -49,6 +50,8 @@ extension BottomCardView {
                 $0.firstAnchor == bottomAnchor ||
                 $0.secondAnchor == bottomAnchor
         }
-        constraints?.forEach {$0.priority = UILayoutPriority(rawValue: 1)}
+        constraints?.forEach {
+            $0.isActive = false
+        }
     }
 }

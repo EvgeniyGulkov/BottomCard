@@ -137,7 +137,7 @@ public class BottomCardView: UIView {
                                         to: nearestPoint,
                                         bottomInset: viewInsets?.bottom ?? 0,
                                         bounces: bounces,
-                                        speed: animationSpeed)
+                                        speed: animationSpeed) { [unowned self] animation in self.delegate?.bottomCardView(springAnimationComplete: animation, inPoint: self.currentPointIndex, onHeight: self.height)}
     }
 
     func getNextPoint() {
@@ -165,14 +165,14 @@ public class BottomCardView: UIView {
         let nextPointHeight = points[nextPointIndex]
         let currentHeight = height - currentPointHeight
         let length = (nextPointHeight - currentPointHeight)
-        var valueToNextPoint: CGFloat = 0
+        var progress: CGFloat = 0
         if height == points[currentPointIndex] {
-            valueToNextPoint = 0
+            progress = 0
         } else {
-            valueToNextPoint = currentHeight / length
+            progress = currentHeight / length
         }
-        delegate?.progressToPointDidChange(from: currentPointIndex,
-                                           to: nextPointIndex,
-                                           progress: valueToNextPoint)
+        delegate?.bottomCardView(progressDidChangeFromPoint: currentPointIndex,
+                                 toPoint: nextPointIndex,
+                                 withProgress: progress)
     }
 }

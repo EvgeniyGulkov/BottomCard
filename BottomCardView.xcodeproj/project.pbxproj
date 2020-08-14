@@ -400,7 +400,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.5;
+				MARKETING_VERSION = 0.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BottomCardView;
 				PRODUCT_NAME = BottomCardView;
 				SWIFT_SUPPRESS_WARNINGS = YES;
@@ -421,7 +421,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.5;
+				MARKETING_VERSION = 0.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BottomCardView;
 				PRODUCT_NAME = BottomCardView;
 				SWIFT_SUPPRESS_WARNINGS = YES;

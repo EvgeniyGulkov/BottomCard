@@ -1,8 +1,14 @@
 ## [Unreleased]
+
+## [0.2.10] - 2020-08-14
+### Changed
+- change moveToPoint and setHeight methods
+
 ## [0.2.9] - 2020-08-14
 ### Changed
 - remove cornerRadius
 - add insetFromSafeArea enabled property
+
 ## [0.2.8] - 2020-08-14
 ### Changed
 - change delegate methods

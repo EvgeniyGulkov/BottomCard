@@ -112,7 +112,7 @@ public class BottomCardView: UIView {
         }
     }
 
-    func moveToPointWithAnimation() {
+    func moveToNearestPoint() {
         var nearestPoint = points[currentPointIndex]
         var minValue: CGFloat = .infinity
         for point in points {
@@ -122,8 +122,12 @@ public class BottomCardView: UIView {
                 nearestPoint = point
             }
         }
+        moveWithAnimation(point: nearestPoint)
+    }
+
+    func moveWithAnimation(point: TargetPoint) {
         ViewAnimator.topSpringAnimation(view: self,
-                                        to: nearestPoint,
+                                        to: point,
                                         bottomInset: viewInsets?.bottom ?? 0,
                                         bounces: bounces,
                                         speed: animationSpeed) { [unowned self] animation in self.delegate?.bottomCardView(springAnimationComplete: animation, inPoint: self.currentPointIndex, onHeight: self.height)}

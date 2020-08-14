@@ -21,7 +21,7 @@ extension BottomCardView {
         if insetsFromSafeAreaEnabled {
             if viewInsets == nil {
                 viewInsets = safeAreaInsets
-                moveToPoint(index: 0)
+                moveToPoint(index: 0, animated: false)
             }
         } else {
             viewInsets = nil

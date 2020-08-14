@@ -27,7 +27,7 @@ extension BottomCardView {
             }
             previousPoint = scrollView.panGestureRecognizer.location(in: superView)
         } else if sender.state == .ended {
-            moveToPointWithAnimation()
+            moveToNearestPoint()
         }
     }
 
@@ -40,7 +40,7 @@ extension BottomCardView {
             changeSize(difference: difference)
             previousPoint = point
         } else if state == .ended {
-            moveToPointWithAnimation()
+            moveToNearestPoint()
         }
     }
 }

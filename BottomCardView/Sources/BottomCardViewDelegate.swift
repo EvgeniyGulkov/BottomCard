@@ -14,7 +14,7 @@ public protocol BottomCardViewDelegate: class {
     func springAnimationComplete(inPoint: Int, onHeight: CGFloat)
 }
 
-extension BottomCardViewDelegate {
+public extension BottomCardViewDelegate {
     func progressToPointDidChange(from: Int, to: Int, progress: CGFloat) {}
     func viewHeightDidChange(height: CGFloat) {}
     func springAnimationComplete(inPoint: Int, onHeight: CGFloat) {}

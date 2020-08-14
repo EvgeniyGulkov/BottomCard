@@ -82,7 +82,7 @@ public class BottomCardView: UIView {
         }
     }
 
-    weak var delegate: BottomCardViewDelegate?
+    public weak var delegate: BottomCardViewDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)

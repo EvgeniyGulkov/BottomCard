@@ -39,5 +39,11 @@ extension BottomCardView {
         self.getCurrentPoint()
         self.getNextPoint()
         self.delegate?.viewHeightDidChange(height: height)
+        self.disableConstraints()
+    }
+
+    private func disableConstraints() {
+        superview?.constraints.first {$0.firstAnchor == topAnchor}?.isActive = false
+        superview?.constraints.first {$0.secondAnchor == bottomAnchor}?.isActive = false
     }
 }

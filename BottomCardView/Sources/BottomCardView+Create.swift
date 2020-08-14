@@ -17,30 +17,19 @@ extension BottomCardView {
         height = minPoint
     }
 
-    func createMask(radius: CGFloat) {
-        let tempHeight = height
-        height = UIScreen.main.bounds.height
-        let maskPath = UIBezierPath(roundedRect: bounds,
-                                    byRoundingCorners: [.topRight, .topLeft],
-                                    cornerRadii: CGSize(width: radius, height: radius))
-        let shape = CAShapeLayer()
-        shape.path = maskPath.reversing().cgPath
-        layer.mask = shape
-        height = tempHeight
-    }
-
     public override func layoutSubviews() {
-        if viewInsets == nil {
-            viewInsets = safeAreaInsets
-        }
-        if frame.width != width {
-            width = frame.width
+        if insetsFromSafeAreaEnabled {
+            if viewInsets == nil {
+                viewInsets = safeAreaInsets
+                moveToPoint(index: 0)
+            }
+        } else {
+            viewInsets = nil
         }
         self.getCurrentPoint()
         self.getNextPoint()
         self.delegate?.bottomCardView(viewHeightDidChange: height)
         self.changeConstraintPriority()
-        print(frame.maxY)
     }
 
     private func changeConstraintPriority() {

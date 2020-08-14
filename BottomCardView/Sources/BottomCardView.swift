@@ -14,26 +14,15 @@ public class BottomCardView: UIView {
     public var animationSpeed: CGFloat = 10
     public var currentPointIndex = 0
     public var direction: Direction!
+    public var insetsFromSafeAreaEnabled = true
 
     var pointsRaw: [CGFloat] = []
     var previousPoint = CGPoint(x: 0, y: 0)
 
     var viewInsets: UIEdgeInsets?
 
-    var width: CGFloat = 0 {
-        didSet {
-            createMask(radius: cornerRadius)
-        }
-    }
-
     public var points: [TargetPoint] {
         return pointsRaw.sorted(by: <)
-    }
-
-    public var cornerRadius: CGFloat = 15 {
-        didSet {
-            createMask(radius: cornerRadius)
-        }
     }
 
     var height: CGFloat {

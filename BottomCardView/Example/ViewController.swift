@@ -30,7 +30,7 @@ class ViewController: UIViewController, BottomCardViewDelegate {
         bottomCardView.addPoint(value: .infinity)
         bottomCardView.minPoint = 30
         bottomCardView.delegate = self
-        bottomCardView.cornerRadius = 20
+        bottomCardView.insetsFromSafeAreaEnabled = true
         bottomCardView.addScroll(for: tableViewInBottom)
     }
 

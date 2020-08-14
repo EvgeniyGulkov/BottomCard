@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import pop
 
 class ViewController: UIViewController, BottomCardViewDelegate {
 
@@ -33,14 +34,18 @@ class ViewController: UIViewController, BottomCardViewDelegate {
         bottomCardView.addScroll(for: tableViewInBottom)
     }
 
-    func valueToPointDidChange(from: Int, to: Int, progress: CGFloat) {
-        if from == 0, to == 1 {
+    func bottomCardView(progressDidChangeFromPoint index: Int, toPoint nextIndex: Int, withProgress progress: CGFloat) {
+        if index == 0, nextIndex == 1 {
             let color = headerView.backgroundColor
             headerView.backgroundColor = color?.withAlphaComponent(1 - progress)
         }
-        if from == 1, to == 0 {
+        if index == 1, nextIndex == 0 {
             let color = headerView.backgroundColor
             headerView.backgroundColor = color?.withAlphaComponent(progress)
         }
+    }
+
+    func bottomCardView(viewHeightDidChange height: CGFloat) {
+        print(bottomCardView.frame)
     }
 }

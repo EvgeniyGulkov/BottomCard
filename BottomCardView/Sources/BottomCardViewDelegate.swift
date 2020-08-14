@@ -7,15 +7,26 @@
 //
 
 import UIKit
+import pop
 
 public protocol BottomCardViewDelegate: class {
-    func progressToPointDidChange(from: Int, to: Int, progress: CGFloat)
-    func viewHeightDidChange(height: CGFloat)
-    func springAnimationComplete(inPoint: Int, onHeight: CGFloat)
+    func bottomCardView(progressDidChangeFromPoint index: Int,
+                        toPoint nextIndex: Int,
+                        withProgress progress: CGFloat)
+
+    func bottomCardView(viewHeightDidChange height: CGFloat)
+
+    func bottomCardView(springAnimationComplete animation: POPAnimation?,
+                        inPoint index: Int, onHeight height: CGFloat)
 }
 
 public extension BottomCardViewDelegate {
-    func progressToPointDidChange(from: Int, to: Int, progress: CGFloat) {}
-    func viewHeightDidChange(height: CGFloat) {}
-    func springAnimationComplete(inPoint: Int, onHeight: CGFloat) {}
+    func bottomCardView(progressDidChangeFromPoint index: Int,
+                        toPoint nextIndex: Int,
+                        withProgress progress: CGFloat) {}
+
+    func bottomCardView(viewHeightDidChange height: CGFloat) {}
+
+    func bottomCardView(springAnimationComplete animation: POPAnimation?,
+                        inPoint index: Int, onHeight height: CGFloat) {}
 }

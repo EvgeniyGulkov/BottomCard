@@ -1,0 +1,6 @@
+## [Unreleased]
+## [0.2.8] - 2020-08-14
+### Changed
+- change delegate methods
+### Fixed
+- fix crash

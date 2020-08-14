@@ -43,7 +43,9 @@ extension BottomCardView {
     }
 
     private func disableConstraints() {
-        superview?.constraints.first {$0.firstAnchor == topAnchor}?.isActive = false
-        superview?.constraints.first {$0.secondAnchor == bottomAnchor}?.isActive = false
+        superview?.constraints.filter {$0.firstAnchor == topAnchor ||
+            $0.secondAnchor == topAnchor}.forEach {$0.isActive = false}
+        superview?.constraints.filter {$0.firstAnchor == bottomAnchor ||
+            $0.secondAnchor == bottomAnchor}.forEach {$0.isActive = false}
     }
 }

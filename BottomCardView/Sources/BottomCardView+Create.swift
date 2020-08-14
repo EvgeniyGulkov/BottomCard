@@ -15,7 +15,6 @@ extension BottomCardView {
         autoresizingMask = [.flexibleLeftMargin, .flexibleWidth, .flexibleTopMargin, .flexibleHeight, .flexibleRightMargin]
         addPoint(value: minPoint)
         height = minPoint
-        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
     }
 
     func createMask(radius: CGFloat) {

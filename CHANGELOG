@@ -1,4 +1,9 @@
 ## [Unreleased]
+## [0.2.11] - 2020-08-16
+
+### Added
+- added basic animation with completion
+- added completion to spring animation
 
 ## [0.2.10] - 2020-08-14
 ### Changed

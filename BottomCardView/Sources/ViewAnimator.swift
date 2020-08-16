@@ -17,7 +17,7 @@ public enum AnimationType {
 
 public class ViewAnimator {
     static func topSpringAnimation(view: UIView, to: CGFloat, bottomInset: CGFloat, bounces: CGFloat, speed: CGFloat, _ completion: ((POPAnimation?, Bool) -> Void)?) {
-        var spring = POPSpringAnimation(propertyNamed: kPOPViewFrame)
+        let spring = POPSpringAnimation(propertyNamed: kPOPViewFrame)
         var minY: CGFloat = UIScreen.main.bounds.height - to - bottomInset
         var height = to
         if minY <= 0 {

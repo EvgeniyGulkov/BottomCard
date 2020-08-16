@@ -12,6 +12,8 @@
 		673FCDE824E24846001AA466 /* BottomCardView+GestureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673FCDE724E24846001AA466 /* BottomCardView+GestureDelegate.swift */; };
 		673FCDEA24E277C0001AA466 /* TouchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673FCDE924E277C0001AA466 /* TouchState.swift */; };
 		674C52BD24E945D500669D15 /* BottomCardView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 674C52BC24E945D500669D15 /* BottomCardView.podspec */; };
+		674C52BF24E9546300669D15 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674C52BE24E9546300669D15 /* AnimationType.swift */; };
+		674C52C324E98E0800669D15 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 674C52C224E98E0800669D15 /* Media.xcassets */; };
 		676282D724D9A13000FB4C99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676282D624D9A13000FB4C99 /* AppDelegate.swift */; };
 		676282DB24D9A13000FB4C99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676282DA24D9A13000FB4C99 /* ViewController.swift */; };
 		676282DE24D9A13000FB4C99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 676282DC24D9A13000FB4C99 /* Main.storyboard */; };
@@ -32,6 +34,8 @@
 		673FCDE724E24846001AA466 /* BottomCardView+GestureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomCardView+GestureDelegate.swift"; sourceTree = "<group>"; };
 		673FCDE924E277C0001AA466 /* TouchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchState.swift; sourceTree = "<group>"; };
 		674C52BC24E945D500669D15 /* BottomCardView.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BottomCardView.podspec; sourceTree = "<group>"; };
+		674C52BE24E9546300669D15 /* AnimationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
+		674C52C224E98E0800669D15 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		676282D324D9A13000FB4C99 /* BottomCardView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomCardView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		676282D624D9A13000FB4C99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		676282DA24D9A13000FB4C99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 				6763DD9524E1A20C007AB2A0 /* Sources */,
 				676282E424D9A13200FB4C99 /* Info.plist */,
 				674C52BC24E945D500669D15 /* BottomCardView.podspec */,
+				674C52C224E98E0800669D15 /* Media.xcassets */,
 			);
 			path = BottomCardView;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 				673FCDE724E24846001AA466 /* BottomCardView+GestureDelegate.swift */,
 				6731033624E56AC1007FF476 /* ViewAnimator.swift */,
 				6763DD8924E1895E007AB2A0 /* Direction.swift */,
+				674C52BE24E9546300669D15 /* AnimationType.swift */,
 				673FCDE924E277C0001AA466 /* TouchState.swift */,
 			);
 			path = Sources;
@@ -195,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				674C52BD24E945D500669D15 /* BottomCardView.podspec in Resources */,
+				674C52C324E98E0800669D15 /* Media.xcassets in Resources */,
 				676282DE24D9A13000FB4C99 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +265,7 @@
 				6763DD8A24E1895E007AB2A0 /* Direction.swift in Sources */,
 				6763DD8C24E18A9B007AB2A0 /* BottomCardView+TouchView.swift in Sources */,
 				6763DD8824E1884F007AB2A0 /* BottomCardViewDelegate.swift in Sources */,
+				674C52BF24E9546300669D15 /* AnimationType.swift in Sources */,
 				673FCDE824E24846001AA466 /* BottomCardView+GestureDelegate.swift in Sources */,
 				6731033924E58AB0007FF476 /* ViewController+DataSource.swift in Sources */,
 				6731033724E56AC1007FF476 /* ViewAnimator.swift in Sources */,

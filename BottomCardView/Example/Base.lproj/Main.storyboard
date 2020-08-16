@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aHI-yK-3Uv">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Test cell" id="aHI-yK-3Uv">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aHI-yK-3Uv" id="cvG-7U-tpE">
@@ -42,19 +42,26 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dJN-RL-LNh">
-                                        <rect key="frame" x="0.0" y="60" width="414" height="758"/>
+                                        <rect key="frame" x="0.0" y="385" width="414" height="433"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </tableView>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kDt-si-2jN">
+                                        <rect key="frame" x="0.0" y="60" width="414" height="325"/>
+                                    </mapView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.71286386986301364" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="gMg-hS-53S" firstAttribute="top" secondItem="mTK-dA-Mgl" secondAttribute="top" id="97S-V2-Z4V"/>
-                                    <constraint firstItem="dJN-RL-LNh" firstAttribute="top" secondItem="gMg-hS-53S" secondAttribute="bottom" id="IIM-yi-vTC"/>
+                                    <constraint firstItem="kDt-si-2jN" firstAttribute="leading" secondItem="mTK-dA-Mgl" secondAttribute="leading" id="9WK-Z6-NNS"/>
+                                    <constraint firstItem="dJN-RL-LNh" firstAttribute="top" secondItem="kDt-si-2jN" secondAttribute="bottom" id="LhH-ke-T1m"/>
+                                    <constraint firstItem="kDt-si-2jN" firstAttribute="height" secondItem="dJN-RL-LNh" secondAttribute="height" multiplier="0.75" id="Qhm-hk-sUR"/>
                                     <constraint firstAttribute="trailing" secondItem="dJN-RL-LNh" secondAttribute="trailing" id="RFQ-uH-OEl"/>
                                     <constraint firstAttribute="bottom" secondItem="dJN-RL-LNh" secondAttribute="bottom" id="Xts-xH-WWX"/>
                                     <constraint firstAttribute="trailing" secondItem="gMg-hS-53S" secondAttribute="trailing" id="Y5a-k5-J4Z"/>
                                     <constraint firstItem="gMg-hS-53S" firstAttribute="leading" secondItem="mTK-dA-Mgl" secondAttribute="leading" id="ptD-sV-F2Q"/>
                                     <constraint firstItem="dJN-RL-LNh" firstAttribute="leading" secondItem="mTK-dA-Mgl" secondAttribute="leading" id="sTz-u9-FhS"/>
+                                    <constraint firstItem="kDt-si-2jN" firstAttribute="top" secondItem="gMg-hS-53S" secondAttribute="bottom" id="tL7-s7-zsF"/>
+                                    <constraint firstAttribute="trailing" secondItem="kDt-si-2jN" secondAttribute="trailing" id="xKj-Gw-sHh"/>
                                 </constraints>
                             </view>
                         </subviews>

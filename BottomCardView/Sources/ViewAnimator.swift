@@ -9,12 +9,6 @@
 import UIKit
 import pop
 
-public enum AnimationType {
-    case spring
-    case basic (duration: Double)
-    case none
-}
-
 public class ViewAnimator {
     static func topSpringAnimation(view: UIView, to: CGFloat, bottomInset: CGFloat, bounces: CGFloat, speed: CGFloat, _ completion: ((POPAnimation?, Bool) -> Void)?) {
         let spring = POPSpringAnimation(propertyNamed: kPOPViewFrame)

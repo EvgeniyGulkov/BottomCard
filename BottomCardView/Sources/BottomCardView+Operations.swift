@@ -27,14 +27,16 @@ extension BottomCardView {
         }
     }
 
-    public func moveToPoint(index: Int, animation: AnimationType, completion: ((POPAnimation?, Bool) -> Void)?) {
+    public func moveToPoint(index: Int,
+                            animation: AnimationType,
+                            _ completion: ((POPAnimation?, Bool) -> Void)? = nil) {
         let point = points[index]
-        changeHeight(value: point, animation: animation, completion: completion)
+        changeHeight(value: point, animation: animation, completion)
     }
 
     public func changeHeight(value: CGFloat,
                              animation: AnimationType,
-                             completion: ((POPAnimation?, Bool) -> Void)?) {
+                             _ completion: ((POPAnimation?, Bool) -> Void)? = nil) {
         moveWithAnimation(point: value, animationType: animation, completion: completion)
     }
 }

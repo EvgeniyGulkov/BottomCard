@@ -37,15 +37,11 @@ class ViewController: UIViewController, BottomCardViewDelegate {
     func bottomCardView(progressDidChangeFromPoint index: Int, toPoint nextIndex: Int, withProgress progress: CGFloat) {
         if index == 0, nextIndex == 1 {
             let color = headerView.backgroundColor
-            headerView.backgroundColor = color?.withAlphaComponent(1 - progress)
+            headerView.backgroundColor = color?.withAlphaComponent(progress)
         }
         if index == 1, nextIndex == 0 {
             let color = headerView.backgroundColor
-            headerView.backgroundColor = color?.withAlphaComponent(progress)
+            headerView.backgroundColor = color?.withAlphaComponent(1 - progress)
         }
-    }
-
-    func bottomCardView(viewHeightDidChange height: CGFloat) {
-        print(bottomCardView.frame)
     }
 }

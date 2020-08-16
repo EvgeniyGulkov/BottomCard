@@ -122,15 +122,29 @@ public class BottomCardView: UIView {
                 nearestPoint = point
             }
         }
-        moveWithAnimation(point: nearestPoint)
+        moveWithAnimation(point: nearestPoint, animationType: .spring, completion: nil)
     }
 
-    func moveWithAnimation(point: TargetPoint) {
-        ViewAnimator.topSpringAnimation(view: self,
-                                        to: point,
-                                        bottomInset: viewInsets?.bottom ?? 0,
-                                        bounces: bounces,
-                                        speed: animationSpeed) { [unowned self] animation in self.delegate?.bottomCardView(springAnimationComplete: animation, inPoint: self.currentPointIndex, onHeight: self.height)}
+    func moveWithAnimation(point: TargetPoint, animationType: AnimationType, completion: ((Bool, Int, CGFloat) -> Void)?) {
+        let inset = viewInsets?.bottom ?? 0
+        switch animationType {
+        case .spring:
+            ViewAnimator.topSpringAnimation(view: self,
+                                            to: point,
+                                            bottomInset: inset,
+                                            bounces: bounces,
+                                            speed: animationSpeed) { [unowned self] in
+                                                completion?($0, self.currentPointIndex, point)}
+        case .basic(let duration):
+            ViewAnimator.topAnimation(view: self,
+                                      to: point,
+                                      bottomInset: inset,
+                                      duration: duration) { [unowned self] in
+                                      completion?($0, self.currentPointIndex, point)}
+        case .none:
+            height = point
+            completion?(true, currentPointIndex, height)
+        }
     }
 
     func getNextPoint() {

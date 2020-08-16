@@ -15,9 +15,6 @@ public protocol BottomCardViewDelegate: class {
                         withProgress progress: CGFloat)
 
     func bottomCardView(viewHeightDidChange height: CGFloat)
-
-    func bottomCardView(springAnimationComplete animation: POPAnimation?,
-                        inPoint index: Int, onHeight height: CGFloat)
 }
 
 public extension BottomCardViewDelegate {
@@ -26,7 +23,4 @@ public extension BottomCardViewDelegate {
                         withProgress progress: CGFloat) {}
 
     func bottomCardView(viewHeightDidChange height: CGFloat) {}
-
-    func bottomCardView(springAnimationComplete animation: POPAnimation?,
-                        inPoint index: Int, onHeight height: CGFloat) {}
 }

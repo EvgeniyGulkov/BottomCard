@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import pop
 
 public typealias TargetPoint = CGFloat
 
@@ -26,14 +27,14 @@ extension BottomCardView {
         }
     }
 
-    public func moveToPoint(index: Int, animation: AnimationType, completion: ((Bool, Int, CGFloat) -> Void)?) {
+    public func moveToPoint(index: Int, animation: AnimationType, completion: ((POPAnimation?, Bool) -> Void)?) {
         let point = points[index]
         changeHeight(value: point, animation: animation, completion: completion)
     }
 
     public func changeHeight(value: CGFloat,
                              animation: AnimationType,
-                             completion: ((Bool, Int, CGFloat) -> Void)?) {
+                             completion: ((POPAnimation?, Bool) -> Void)?) {
         moveWithAnimation(point: value, animationType: animation, completion: completion)
     }
 }

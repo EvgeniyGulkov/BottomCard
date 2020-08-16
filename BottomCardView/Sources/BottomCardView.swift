@@ -125,7 +125,7 @@ public class BottomCardView: UIView {
         moveWithAnimation(point: nearestPoint, animationType: .spring, completion: nil)
     }
 
-    func moveWithAnimation(point: TargetPoint, animationType: AnimationType, completion: ((Bool, Int, CGFloat) -> Void)?) {
+    func moveWithAnimation(point: TargetPoint, animationType: AnimationType, completion: ((POPAnimation?, Bool) -> Void)? = nil) {
         let inset = viewInsets?.bottom ?? 0
         switch animationType {
         case .spring:
@@ -133,17 +133,17 @@ public class BottomCardView: UIView {
                                             to: point,
                                             bottomInset: inset,
                                             bounces: bounces,
-                                            speed: animationSpeed) { [unowned self] in
-                                                completion?($0, self.currentPointIndex, point)}
+                                            speed: animationSpeed,
+                                            completion)
         case .basic(let duration):
             ViewAnimator.topAnimation(view: self,
                                       to: point,
                                       bottomInset: inset,
-                                      duration: duration) { [unowned self] in
-                                      completion?($0, self.currentPointIndex, point)}
+                                      duration: duration,
+                                      completion)
         case .none:
             height = point
-            completion?(true, currentPointIndex, height)
+            completion?(nil, true)
         }
     }
 

@@ -30,9 +30,13 @@ class ViewController: UIViewController, BottomCardViewDelegate {
         bottomCardView.addPoint(value: .infinity)
         bottomCardView.minPoint = 30
         bottomCardView.delegate = self
-        bottomCardView.insetsFromSafeAreaEnabled = true
         bottomCardView.addScroll(for: tableViewInBottom)
         headerHeight.constant = navigationController!.navigationBar.frame.height
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        bottomCardView.insets = view.safeAreaInsets
     }
 
     func bottomCardView(progressDidChangeFromPoint index: Int, toPoint nextIndex: Int, withProgress progress: CGFloat) {

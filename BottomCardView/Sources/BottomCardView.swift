@@ -14,28 +14,25 @@ public class BottomCardView: UIView {
     public var animationSpeed: CGFloat = 10
     public var currentPointIndex = 0
     public var direction: Direction!
-    public var insetsFromSafeAreaEnabled = true {
-        didSet {
-            if maxPoint != nil {
-                addPoint(value: .infinity)
-            }
-            moveToNearestPoint()
-        }
-    }
 
     var pointsRaw = Set<CGFloat>()
     var previousPoint = CGPoint(x: 0, y: 0)
 
     var maxHeight: CGFloat {
-        return UIScreen.main.bounds.height - viewInsets.top - viewInsets.bottom
+        return UIScreen.main.bounds.height - topInset - bottomInset
     }
 
-    var viewInsets: UIEdgeInsets {
-        if insetsFromSafeAreaEnabled,
-            let insets = UIApplication.shared.windows.first?.safeAreaInsets {
-            return insets
-        } else {
-            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    var topInset: CGFloat {
+        return insets?.top ?? 0
+    }
+
+    var bottomInset: CGFloat {
+        return insets?.bottom ?? 0
+    }
+
+    var insets: UIEdgeInsets? {
+        didSet {
+            moveToNearestPoint()
         }
     }
 
@@ -117,7 +114,7 @@ public class BottomCardView: UIView {
         }
     }
 
-    func moveToNearestPoint() {
+    func moveToNearestPoint(animation: AnimationType = .spring) {
         var nearestPoint = points[currentPointIndex]
         var minValue: CGFloat = .infinity
         for point in points {
@@ -127,7 +124,7 @@ public class BottomCardView: UIView {
                 nearestPoint = point
             }
         }
-        moveWithAnimation(point: nearestPoint, animationType: .spring, completion: nil)
+        moveWithAnimation(point: nearestPoint, animationType: animation, completion: nil)
     }
 
     func moveWithAnimation(point: TargetPoint, animationType: AnimationType, completion: ((POPAnimation?, Bool) -> Void)? = nil) {
@@ -186,16 +183,16 @@ public class BottomCardView: UIView {
     }
 
     private func updateHeight(value: CGFloat) {
-        let minY = maxHeight - value + viewInsets.top
-        if minY < viewInsets.top {
-            self.frame.origin.y = viewInsets.top
+        let minY = maxHeight - value + topInset
+        if minY < topInset {
+            self.frame.origin.y = topInset
             if height < maxHeight {
                 self.frame.size.height = maxHeight
             }
             return
         }
         if value <= minPoint {
-            self.frame.origin.y = maxHeight - minPoint + viewInsets.top
+            self.frame.origin.y = maxHeight - minPoint + topInset
             self.frame.size.height = minPoint
             return
         }

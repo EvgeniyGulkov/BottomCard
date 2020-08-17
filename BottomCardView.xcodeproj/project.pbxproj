@@ -23,7 +23,7 @@
 		6763DD8C24E18A9B007AB2A0 /* BottomCardView+TouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD8B24E18A9B007AB2A0 /* BottomCardView+TouchView.swift */; };
 		6763DD8E24E18B19007AB2A0 /* BottomCardView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD8D24E18B19007AB2A0 /* BottomCardView+Create.swift */; };
 		6763DD9024E18D0E007AB2A0 /* BottomCardView+Selectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD8F24E18D0E007AB2A0 /* BottomCardView+Selectors.swift */; };
-		6763DD9224E18EB1007AB2A0 /* BottomCardView+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD9124E18EB1007AB2A0 /* BottomCardView+Operations.swift */; };
+		6763DD9224E18EB1007AB2A0 /* BottomCardView+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD9124E18EB1007AB2A0 /* BottomCardView+Public.swift */; };
 		E107E84D17A6D577A24EEEE7 /* Pods_BottomCardView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF5C22DE80BF539BBA9816C /* Pods_BottomCardView.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +47,7 @@
 		6763DD8B24E18A9B007AB2A0 /* BottomCardView+TouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomCardView+TouchView.swift"; sourceTree = "<group>"; };
 		6763DD8D24E18B19007AB2A0 /* BottomCardView+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomCardView+Create.swift"; sourceTree = "<group>"; };
 		6763DD8F24E18D0E007AB2A0 /* BottomCardView+Selectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomCardView+Selectors.swift"; sourceTree = "<group>"; };
-		6763DD9124E18EB1007AB2A0 /* BottomCardView+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomCardView+Operations.swift"; sourceTree = "<group>"; };
+		6763DD9124E18EB1007AB2A0 /* BottomCardView+Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomCardView+Public.swift"; sourceTree = "<group>"; };
 		8EF5C22DE80BF539BBA9816C /* Pods_BottomCardView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BottomCardView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		905E4A974F5E1FD02A75D7F5 /* Pods-BottomCardView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BottomCardView.release.xcconfig"; path = "Target Support Files/Pods-BottomCardView/Pods-BottomCardView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,7 +113,7 @@
 				6763DD8B24E18A9B007AB2A0 /* BottomCardView+TouchView.swift */,
 				6763DD8D24E18B19007AB2A0 /* BottomCardView+Create.swift */,
 				6763DD8F24E18D0E007AB2A0 /* BottomCardView+Selectors.swift */,
-				6763DD9124E18EB1007AB2A0 /* BottomCardView+Operations.swift */,
+				6763DD9124E18EB1007AB2A0 /* BottomCardView+Public.swift */,
 				673FCDE724E24846001AA466 /* BottomCardView+GestureDelegate.swift */,
 				6731033624E56AC1007FF476 /* ViewAnimator.swift */,
 				6763DD8924E1895E007AB2A0 /* Direction.swift */,
@@ -255,7 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6763DD9224E18EB1007AB2A0 /* BottomCardView+Operations.swift in Sources */,
+				6763DD9224E18EB1007AB2A0 /* BottomCardView+Public.swift in Sources */,
 				676282DB24D9A13000FB4C99 /* ViewController.swift in Sources */,
 				6763DD9024E18D0E007AB2A0 /* BottomCardView+Selectors.swift in Sources */,
 				676282D724D9A13000FB4C99 /* AppDelegate.swift in Sources */,
@@ -412,7 +412,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.13;
+				MARKETING_VERSION = 0.2.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BottomCardView;
 				PRODUCT_NAME = BottomCardView;
 				SWIFT_SUPPRESS_WARNINGS = YES;
@@ -433,7 +433,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.13;
+				MARKETING_VERSION = 0.2.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BottomCardView;
 				PRODUCT_NAME = BottomCardView;
 				SWIFT_SUPPRESS_WARNINGS = YES;

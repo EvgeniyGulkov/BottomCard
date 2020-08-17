@@ -16,7 +16,7 @@ pod 'BottomCardView'
 ## Usage
 ### Setup
 
-You can use this view as simple UIView using IB or add it programmatically
+You can use this view as simple UIView using interface builder or add it programmatically
 
 Usage example:
 
@@ -46,9 +46,6 @@ class ViewController: UIViewController, BottomCardViewDelegate {
 
         /// set delegate
         bottomCardView.delegate = self
-        
-        /// enable or disable safeAreaInsets
-        bottomCardView.insetsFromSafeAreaEnabled = true
 
         /// if you want to scroll BottomCardView when scrollView inside
         is scrolled to end, you should add it with following method
@@ -68,15 +65,23 @@ bottomCardView.moveToPoint(index: 1, animation: .spring) { animation, complete i
 }
 ```
 Also you can choose type of you animation:
-- none (withou animation)
+- none (without animation)
 - spring (spring animation with default parameters)
-- basic (animation w/o sprion, but you can change duration time)
+- basic (animation w/o spring, but you can change duration time)
 
 For change default properties for spring animation:
 
 ```swift
 bottomCardView.bounces = 4
 bottomCardView.animationSpeed = 20
+```
+
+Set safe area insets:
+```swift
+override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    bottomCardView.insets = view.safeAreaInsets
+}
 ```
 
 ## Author

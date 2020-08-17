@@ -131,7 +131,6 @@ public class BottomCardView: UIView {
     }
 
     func moveWithAnimation(point: TargetPoint, animationType: AnimationType, completion: ((POPAnimation?, Bool) -> Void)? = nil) {
-        let inset = viewInsets.bottom
         switch animationType {
         case .spring:
             ViewAnimator.topSpringAnimation(view: self,

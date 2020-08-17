@@ -78,8 +78,7 @@ bottomCardView.animationSpeed = 20
 
 Set safe area insets:
 ```swift
-override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+override func viewDidLayoutSubviews() {
     bottomCardView.insets = view.safeAreaInsets
 }
 ```

@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.2.13] - 2020-08-17
+### Changed
+- support top safe area inset
+
 ## [0.2.12] - 2020-08-16
 ### Changed
 - change animation completion

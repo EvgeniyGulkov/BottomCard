@@ -34,8 +34,7 @@ class ViewController: UIViewController, BottomCardViewDelegate {
         headerHeight.constant = navigationController!.navigationBar.frame.height
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLayoutSubviews() {
         bottomCardView.insets = view.safeAreaInsets
     }
 

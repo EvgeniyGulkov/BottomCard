@@ -32,7 +32,9 @@ public class BottomCardView: UIView {
 
     public var insets: UIEdgeInsets? {
         didSet {
-            moveToNearestPoint()
+            if height < bottomInset {
+                changeHeight(value: bottomInset, animation: .none)
+            }
         }
     }
 

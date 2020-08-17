@@ -30,7 +30,7 @@ public class BottomCardView: UIView {
         return insets?.bottom ?? 0
     }
 
-    var insets: UIEdgeInsets? {
+    public var insets: UIEdgeInsets? {
         didSet {
             moveToNearestPoint()
         }

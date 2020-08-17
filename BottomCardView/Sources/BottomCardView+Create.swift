@@ -18,14 +18,6 @@ extension BottomCardView {
     }
 
     public override func layoutSubviews() {
-        if insetsFromSafeAreaEnabled {
-            if viewInsets == nil {
-                viewInsets = safeAreaInsets
-                moveToPoint(index: 0, animation: .none)
-            }
-        } else {
-            viewInsets = nil
-        }
         self.getCurrentPoint()
         self.getNextPoint()
         self.delegate?.bottomCardView(viewHeightDidChange: height)

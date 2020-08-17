@@ -10,13 +10,13 @@ import UIKit
 import pop
 
 public class ViewAnimator {
-    static func topSpringAnimation(view: UIView, to: CGFloat, bottomInset: CGFloat, bounces: CGFloat, speed: CGFloat, _ completion: ((POPAnimation?, Bool) -> Void)?) {
+    static func topSpringAnimation(view: BottomCardView, to: CGFloat, bounces: CGFloat, speed: CGFloat, _ completion: ((POPAnimation?, Bool) -> Void)?) {
         let spring = POPSpringAnimation(propertyNamed: kPOPViewFrame)
-        var minY: CGFloat = UIScreen.main.bounds.height - to - bottomInset
+        var minY: CGFloat = view.maxHeight - to + view.viewInsets.top
         var height = to
-        if minY <= 0 {
-            minY = 0
-            height = UIScreen.main.bounds.height - bottomInset
+        if minY <= view.viewInsets.top {
+            minY = view.viewInsets.top
+            height = view.maxHeight
         }
         spring?.toValue = CGRect(x: view.frame.minX, y: minY, width: view.frame.size.width, height: height)
         spring?.springBounciness = bounces
@@ -25,13 +25,13 @@ public class ViewAnimator {
         view.pop_add(spring, forKey: "kPOPViewFrameSpring")
     }
 
-    static func topAnimation(view: UIView, to: CGFloat, bottomInset: CGFloat, duration: Double, _ completion: ((POPAnimation?, Bool) -> Void)?) {
+    static func topAnimation(view: BottomCardView, to: CGFloat, duration: Double, _ completion: ((POPAnimation?, Bool) -> Void)?) {
         let basic = POPBasicAnimation(propertyNamed: kPOPViewFrame)
-        var minY: CGFloat = UIScreen.main.bounds.height - to - bottomInset
+        var minY: CGFloat = view.maxHeight - to + view.viewInsets.top
         var height = to
-        if minY <= 0 {
-            minY = 0
-            height = UIScreen.main.bounds.height - bottomInset
+        if minY <= view.viewInsets.top {
+            minY = view.viewInsets.top
+            height = view.maxHeight
         }
         basic?.toValue = CGRect(x: view.frame.minX, y: minY, width: view.frame.size.width, height: height)
         basic?.duration = duration

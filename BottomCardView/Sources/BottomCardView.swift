@@ -14,12 +14,30 @@ public class BottomCardView: UIView {
     public var animationSpeed: CGFloat = 10
     public var currentPointIndex = 0
     public var direction: Direction!
-    public var insetsFromSafeAreaEnabled = true
+    public var insetsFromSafeAreaEnabled = true {
+        didSet {
+            if maxPoint != nil {
+                addPoint(value: .infinity)
+            }
+            moveToNearestPoint()
+        }
+    }
 
-    var pointsRaw: [CGFloat] = []
+    var pointsRaw = Set<CGFloat>()
     var previousPoint = CGPoint(x: 0, y: 0)
 
-    var viewInsets: UIEdgeInsets?
+    var maxHeight: CGFloat {
+        return UIScreen.main.bounds.height - viewInsets.top - viewInsets.bottom
+    }
+
+    var viewInsets: UIEdgeInsets {
+        if insetsFromSafeAreaEnabled,
+            let insets = UIApplication.shared.windows.first?.safeAreaInsets {
+            return insets
+        } else {
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
+    }
 
     public var points: [TargetPoint] {
         return pointsRaw.sorted(by: <)
@@ -30,22 +48,7 @@ public class BottomCardView: UIView {
             return self.frame.size.height
         }
         set {
-            let maxHeight = UIScreen.main.bounds.height - (viewInsets?.bottom ?? 0)
-            let minY = UIScreen.main.bounds.height - newValue - (viewInsets?.bottom ?? 0)
-            if minY <= 0 {
-                self.frame.origin.y = 0
-                if height < maxHeight {
-                    self.frame.size.height = maxHeight
-                }
-                return
-            }
-            if newValue <= minPoint {
-                self.frame.origin.y = maxHeight - minPoint
-                self.frame.size.height = minPoint
-                return
-            }
-            self.frame.origin.y = minY
-            self.frame.size.height = newValue
+            updateHeight(value: newValue)
         }
     }
 
@@ -61,12 +64,14 @@ public class BottomCardView: UIView {
         }
     }
 
+    var maxPoint: CGFloat?
+
     private var min: CGFloat = 0 {
         didSet {
             if min < 0 {
-                pointsRaw[0] = 0
+                pointsRaw.insert(0)
             } else {
-                pointsRaw[0] = min
+                pointsRaw.insert(min)
             }
         }
     }
@@ -126,19 +131,17 @@ public class BottomCardView: UIView {
     }
 
     func moveWithAnimation(point: TargetPoint, animationType: AnimationType, completion: ((POPAnimation?, Bool) -> Void)? = nil) {
-        let inset = viewInsets?.bottom ?? 0
+        let inset = viewInsets.bottom
         switch animationType {
         case .spring:
             ViewAnimator.topSpringAnimation(view: self,
                                             to: point,
-                                            bottomInset: inset,
                                             bounces: bounces,
                                             speed: animationSpeed,
                                             completion)
         case .basic(let duration):
             ViewAnimator.topAnimation(view: self,
                                       to: point,
-                                      bottomInset: inset,
                                       duration: duration,
                                       completion)
         case .none:
@@ -181,5 +184,23 @@ public class BottomCardView: UIView {
         delegate?.bottomCardView(progressDidChangeFromPoint: currentPointIndex,
                                  toPoint: nextPointIndex,
                                  withProgress: progress)
+    }
+
+    private func updateHeight(value: CGFloat) {
+        let minY = maxHeight - value + viewInsets.top
+        if minY < viewInsets.top {
+            self.frame.origin.y = viewInsets.top
+            if height < maxHeight {
+                self.frame.size.height = maxHeight
+            }
+            return
+        }
+        if value <= minPoint {
+            self.frame.origin.y = maxHeight - minPoint + viewInsets.top
+            self.frame.size.height = minPoint
+            return
+        }
+        self.frame.origin.y = minY
+        self.frame.size.height = value
     }
 }

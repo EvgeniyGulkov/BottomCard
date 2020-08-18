@@ -1,6 +1,6 @@
 # BottomCardView
-### BottomCardView is a view based on UIView, written in Swift 
-and using [POP](https://github.com/facebookarchive/pop) from animations
+#### BottomCardView is a view based on UIView, written in Swift 
+#### and using [POP](https://github.com/facebookarchive/pop) for animations
 
 ![alt-text](https://github.com/EvgeniyGulkov/BottomCardView/blob/master/BottomCardView/Media.xcassets/screen_image.dataset/ezgif-6-5c005dac91f7.gif)
 ## Requirements
@@ -38,7 +38,8 @@ class ViewController: UIViewController, BottomCardViewDelegate {
         /// add point (value from bottom)
         bottomCardView.addPoint(value: 400)
         
-        /// 
+        /// if you want to use top of your screen or top safe area inset as top point,
+        /// you should add point greater or equal your screen height. for example .infinity
         bottomCardView.addPoint(value: .infinity)
 
         /// set minimum point from bottom
@@ -48,7 +49,7 @@ class ViewController: UIViewController, BottomCardViewDelegate {
         bottomCardView.delegate = self
 
         /// if you want to scroll BottomCardView when scrollView inside
-        is scrolled to end, you should add it with following method
+        /// is scrolled to end, you should add it with following method
         bottomCardView.addScroll(for: tableViewInBottom)
     }
 ```
@@ -81,6 +82,16 @@ Set safe area insets:
 override func viewDidLayoutSubviews() {
     bottomCardView.insets = view.safeAreaInsets
 }
+```
+
+#### Tracking height
+
+You can track the height and position using the dedicated delegate methods:
+
+```swift
+func bottomCardView(progressDidChangeFromPoint index: Int, toPoint nextIndex: Int, withProgress progress: CGFloat)
+
+func bottomCardView(viewHeightDidChange height: CGFloat)
 ```
 
 ## Author

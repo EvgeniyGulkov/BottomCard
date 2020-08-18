@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'BottomCard'
-  s.version          = '0.3.0'
+  s.version          = '0.3.1'
   s.summary          = 'There are alternatives like Pulley or FloatingPanel'
  
   s.description      = <<-DESC

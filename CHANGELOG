@@ -1,5 +1,9 @@
 ## [Unreleased]
 ## [0.3.0] - 2020-08-18
+### Fixed
+- some fixes for Carthage support
+
+## [0.3.0] - 2020-08-18
 ### Added
 - support Carthage
 

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "676282D224D9A13000FB4C99"
-               BuildableName = "BottomCardViewExample.app"
-               BlueprintName = "BottomCardViewExample"
+               BlueprintIdentifier = "674C52DC24EBE4E000669D15"
+               BuildableName = "BottomCardView.framework"
+               BlueprintName = "BottomCardView"
                ReferencedContainer = "container:BottomCardView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,16 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "676282D224D9A13000FB4C99"
-            BuildableName = "BottomCardViewExample.app"
-            BlueprintName = "BottomCardViewExample"
-            ReferencedContainer = "container:BottomCardView.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -57,16 +47,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "676282D224D9A13000FB4C99"
-            BuildableName = "BottomCardViewExample.app"
-            BlueprintName = "BottomCardViewExample"
+            BlueprintIdentifier = "674C52DC24EBE4E000669D15"
+            BuildableName = "BottomCardView.framework"
+            BlueprintName = "BottomCardView"
             ReferencedContainer = "container:BottomCardView.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

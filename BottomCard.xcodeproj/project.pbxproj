@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,7 +27,7 @@
 		6763DD9024E18D0E007AB2A0 /* BottomCardView+Selectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD8F24E18D0E007AB2A0 /* BottomCardView+Selectors.swift */; };
 		6763DD9224E18EB1007AB2A0 /* BottomCardView+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD9124E18EB1007AB2A0 /* BottomCardView+Public.swift */; };
 		A816B5712D103C2B5DAAA8CC /* Pods_BottomCardExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44D92487DE52344381DB1AC /* Pods_BottomCardExample.framework */; };
-		B3A8582709953956B2549E47 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		B3A8582709953956B2549E47 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3A8582709953956B2549E47 /* BuildFile in Frameworks */,
+				B3A8582709953956B2549E47 /* (null) in Frameworks */,
 				18FCD2D7B845C23D262B259B /* Pods_BottomCard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,6 +119,7 @@
 		676282CA24D9A13000FB4C99 = {
 			isa = PBXGroup;
 			children = (
+				674C52E924EBF5DF00669D15 /* BottomCard.podspec */,
 				676282D524D9A13000FB4C99 /* BottomCardExample */,
 				674C52DE24EBE4E000669D15 /* BottomCard */,
 				676282D424D9A13000FB4C99 /* Products */,
@@ -141,7 +142,6 @@
 			children = (
 				6731033A24E59193007FF476 /* Example */,
 				676282E424D9A13200FB4C99 /* Info.plist */,
-				674C52E924EBF5DF00669D15 /* BottomCard.podspec */,
 				674C52C224E98E0800669D15 /* Media.xcassets */,
 			);
 			path = BottomCardExample;

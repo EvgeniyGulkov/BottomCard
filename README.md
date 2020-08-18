@@ -2,7 +2,7 @@
 #### BottomCardView is a view based on UIView, written in Swift 
 #### and using [POP](https://github.com/facebookarchive/pop) for animations
 
-![alt-text](https://github.com/EvgeniyGulkov/BottomCardView/blob/master/BottomCardViewExample/Media.xcassets/screen_image.dataset/ezgif-6-5c005dac91f7.gif)
+![alt-text](https://github.com/EvgeniyGulkov/BottomCard/blob/master/BottomCardExample/Media.xcassets/screen_image.dataset/ezgif-6-5c005dac91f7.gif)
 
 <p align="center">
   <a href="https://developer.apple.com/"><img alt="Platform" src="https://img.shields.io/badge/platform-iOS-green.svg"/></a>

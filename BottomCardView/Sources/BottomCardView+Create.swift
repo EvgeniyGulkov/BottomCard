@@ -18,10 +18,12 @@ extension BottomCardView {
     }
 
     public override func layoutSubviews() {
-        self.getCurrentPoint()
-        self.getNextPoint()
-        self.delegate?.bottomCardView(viewHeightDidChange: height)
-        self.changeConstraintPriority()
+        getCurrentPoint()
+        changeConstraintPriority()
+        let nextPoint = self.getNextPoint()
+        let progress = getProgressValue(nextPointIndex: nextPoint)
+        delegate?.bottomCardView(progressDidChangeFromPoint: currentPointIndex, toPoint: nextPoint, withProgress: progress)
+        delegate?.bottomCardView(viewHeightDidChange: height)
     }
 
     private func changeConstraintPriority() {

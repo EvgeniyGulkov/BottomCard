@@ -28,7 +28,7 @@ class ViewController: UIViewController, BottomCardViewDelegate {
     func setupBottomCard() {
         bottomCardView.addPoint(value: 400)
         bottomCardView.addPoint(value: .infinity)
-        bottomCardView.minPoint = 30
+        bottomCardView.minPoint = 20
         bottomCardView.delegate = self
         bottomCardView.addScroll(for: tableViewInBottom)
         headerHeight.constant = navigationController!.navigationBar.frame.height
@@ -39,13 +39,5 @@ class ViewController: UIViewController, BottomCardViewDelegate {
     }
 
     func bottomCardView(progressDidChangeFromPoint index: Int, toPoint nextIndex: Int, withProgress progress: CGFloat) {
-        if index == 0, nextIndex == 1 {
-            let color = headerView.backgroundColor
-            headerView.backgroundColor = color?.withAlphaComponent(progress)
-        }
-        if index == 1, nextIndex == 0 {
-            let color = headerView.backgroundColor
-            headerView.backgroundColor = color?.withAlphaComponent(1 - progress)
-        }
     }
 }

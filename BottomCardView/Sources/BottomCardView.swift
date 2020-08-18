@@ -31,12 +31,27 @@ public class BottomCardView: UIView {
     }
 
     public var insets: UIEdgeInsets? {
-        didSet {
-            if height < bottomInset {
-                changeHeight(value: bottomInset, animation: .none)
+        get {
+            return safeInsets
+        }
+        set {
+            if newValue != safeInsets {
+                safeInsets = newValue
+                if maxPoint != nil {
+                    addPoint(value: .infinity)
+                }
+                moveToNearestPoint(animation: .basic(duration: 0.01))
             }
         }
     }
+
+    private func optimize() {
+        if let min = points.first, height < min {
+            height = min
+        }
+    }
+
+    private var safeInsets: UIEdgeInsets?
 
     public var points: [TargetPoint] {
         return pointsRaw.sorted(by: <)
@@ -44,10 +59,14 @@ public class BottomCardView: UIView {
 
     var height: CGFloat {
         get {
-            return self.frame.size.height
+            return maxHeight - frame.minY + topInset
         }
         set {
-            updateHeight(value: newValue)
+            if let min = points.first, newValue < min {
+                return
+            } else {
+                updateHeight(value: newValue)
+            }
         }
     }
 
@@ -56,24 +75,19 @@ public class BottomCardView: UIView {
             return min
         }
         set {
+            pointsRaw.remove(min)
             min = newValue
-            if height < newValue {
-                height = newValue
+            if min < 0 {
+                min = 0
             }
+            pointsRaw.insert(min)
+            optimize()
         }
     }
 
     var maxPoint: CGFloat?
 
-    private var min: CGFloat = 0 {
-        didSet {
-            if min < 0 {
-                pointsRaw.insert(0)
-            } else {
-                pointsRaw.insert(min)
-            }
-        }
-    }
+    private var min: CGFloat = 0
 
     public weak var delegate: BottomCardViewDelegate?
 
@@ -148,7 +162,7 @@ public class BottomCardView: UIView {
         }
     }
 
-    func getNextPoint() {
+    func getNextPoint() -> Int {
         let currentPointHeight = points[currentPointIndex]
         var nextPointIndex: Int = currentPointIndex
         if height > currentPointHeight {
@@ -165,10 +179,10 @@ public class BottomCardView: UIView {
                 nextPointIndex = currentPointIndex - 1
             }
         }
-        getProgressValue(nextPointIndex: nextPointIndex)
+        return nextPointIndex
     }
 
-    func getProgressValue(nextPointIndex: Int) {
+    func getProgressValue(nextPointIndex: Int) -> CGFloat {
         let currentPointHeight = points[currentPointIndex]
         let nextPointHeight = points[nextPointIndex]
         let currentHeight = height - currentPointHeight
@@ -179,26 +193,16 @@ public class BottomCardView: UIView {
         } else {
             progress = currentHeight / length
         }
-        delegate?.bottomCardView(progressDidChangeFromPoint: currentPointIndex,
-                                 toPoint: nextPointIndex,
-                                 withProgress: progress)
+        let tempProgress = (progress * 100).rounded()
+        progress = CGFloat(tempProgress / 100)
+        if progress == .infinity || progress == -.infinity {
+            progress = 0
+        }
+        return progress
     }
 
     private func updateHeight(value: CGFloat) {
-        let minY = maxHeight - value + topInset
-        if minY < topInset {
-            self.frame.origin.y = topInset
-            if height < maxHeight {
-                self.frame.size.height = maxHeight
-            }
-            return
-        }
-        if value <= minPoint {
-            self.frame.origin.y = maxHeight - minPoint + topInset
-            self.frame.size.height = minPoint
-            return
-        }
-        self.frame.origin.y = minY
+        self.frame.origin.y = maxHeight - value + topInset
         self.frame.size.height = value
     }
 }

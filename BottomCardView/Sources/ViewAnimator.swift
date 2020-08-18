@@ -21,7 +21,10 @@ public class ViewAnimator {
         spring?.toValue = CGRect(x: view.frame.minX, y: minY, width: view.frame.size.width, height: height)
         spring?.springBounciness = bounces
         spring?.springSpeed = speed
-        spring?.completionBlock = {completion?($0, $1) }
+        spring?.completionBlock = {
+            view.height = to
+            completion?($0, $1)
+        }
         view.pop_add(spring, forKey: "kPOPViewFrameSpring")
     }
 
@@ -35,7 +38,10 @@ public class ViewAnimator {
         }
         basic?.toValue = CGRect(x: view.frame.minX, y: minY, width: view.frame.size.width, height: height)
         basic?.duration = duration
-        basic?.completionBlock = {completion?($0, $1)}
+        basic?.completionBlock = {
+            view.height = to
+            completion?($0, $1)
+        }
         view.pop_add(basic, forKey: "kPOPViewFrameBasic")
     }
 }

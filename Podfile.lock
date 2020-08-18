@@ -1,0 +1,16 @@
+PODS:
+  - pop (1.0.12)
+
+DEPENDENCIES:
+  - pop
+
+SPEC REPOS:
+  trunk:
+    - pop
+
+SPEC CHECKSUMS:
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+
+PODFILE CHECKSUM: d47f9af2cfc61ab516c3d88c38e4629f21efc3bf
+
+COCOAPODS: 1.10.0.beta.2

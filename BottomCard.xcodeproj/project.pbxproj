@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18FCD2D7B845C23D262B259B /* Pods_BottomCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC5C2719F1A9ED3C8D07BE78 /* Pods_BottomCard.framework */; };
 		6731033724E56AC1007FF476 /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6731033624E56AC1007FF476 /* ViewAnimator.swift */; };
 		6731033924E58AB0007FF476 /* ViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6731033824E58AB0007FF476 /* ViewController+DataSource.swift */; };
 		673FCDE824E24846001AA466 /* BottomCardView+GestureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673FCDE724E24846001AA466 /* BottomCardView+GestureDelegate.swift */; };
@@ -16,6 +15,9 @@
 		674C52C324E98E0800669D15 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 674C52C224E98E0800669D15 /* Media.xcassets */; };
 		674C52E124EBE4E100669D15 /* BottomCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 674C52DF24EBE4E000669D15 /* BottomCard.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		674C52EA24EBF5DF00669D15 /* BottomCard.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 674C52E924EBF5DF00669D15 /* BottomCard.podspec */; };
+		674C52ED24EBFAF200669D15 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 674C52EC24EBFAF200669D15 /* Cartfile */; };
+		674C52F024EBFC2C00669D15 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 674C52EF24EBFC2C00669D15 /* pop.framework */; };
+		675137B624EBFC5800775EE9 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 674C52EF24EBFC2C00669D15 /* pop.framework */; };
 		676282D724D9A13000FB4C99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676282D624D9A13000FB4C99 /* AppDelegate.swift */; };
 		676282DB24D9A13000FB4C99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676282DA24D9A13000FB4C99 /* ViewController.swift */; };
 		676282DE24D9A13000FB4C99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 676282DC24D9A13000FB4C99 /* Main.storyboard */; };
@@ -26,19 +28,19 @@
 		6763DD8E24E18B19007AB2A0 /* BottomCardView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD8D24E18B19007AB2A0 /* BottomCardView+Create.swift */; };
 		6763DD9024E18D0E007AB2A0 /* BottomCardView+Selectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD8F24E18D0E007AB2A0 /* BottomCardView+Selectors.swift */; };
 		6763DD9224E18EB1007AB2A0 /* BottomCardView+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763DD9124E18EB1007AB2A0 /* BottomCardView+Public.swift */; };
-		A816B5712D103C2B5DAAA8CC /* Pods_BottomCardExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44D92487DE52344381DB1AC /* Pods_BottomCardExample.framework */; };
+		67CEAEA524EBFE5F008F6C90 /* pop.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 674C52EF24EBFC2C00669D15 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B3A8582709953956B2549E47 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		674C52D424EBDE8900669D15 /* Embed Frameworks */ = {
+		67CEAEA424EBFE55008F6C90 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				67CEAEA524EBFE5F008F6C90 /* pop.framework in CopyFiles */,
 			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -55,6 +57,8 @@
 		674C52DF24EBE4E000669D15 /* BottomCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BottomCard.h; sourceTree = "<group>"; };
 		674C52E024EBE4E100669D15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		674C52E924EBF5DF00669D15 /* BottomCard.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BottomCard.podspec; sourceTree = SOURCE_ROOT; };
+		674C52EC24EBFAF200669D15 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		674C52EF24EBFC2C00669D15 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
 		676282D324D9A13000FB4C99 /* BottomCardExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomCardExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		676282D624D9A13000FB4C99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		676282DA24D9A13000FB4C99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +84,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3A8582709953956B2549E47 /* (null) in Frameworks */,
-				18FCD2D7B845C23D262B259B /* Pods_BottomCard.framework in Frameworks */,
+				675137B624EBFC5800775EE9 /* pop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A816B5712D103C2B5DAAA8CC /* Pods_BottomCardExample.framework in Frameworks */,
+				674C52F024EBFC2C00669D15 /* pop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +123,7 @@
 		676282CA24D9A13000FB4C99 = {
 			isa = PBXGroup;
 			children = (
+				674C52EC24EBFAF200669D15 /* Cartfile */,
 				674C52E924EBF5DF00669D15 /* BottomCard.podspec */,
 				676282D524D9A13000FB4C99 /* BottomCardExample */,
 				674C52DE24EBE4E000669D15 /* BottomCard */,
@@ -168,6 +173,7 @@
 		7296376928AB442FC0E2A4A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				674C52EF24EBFC2C00669D15 /* pop.framework */,
 				F44D92487DE52344381DB1AC /* Pods_BottomCardExample.framework */,
 				FC5C2719F1A9ED3C8D07BE78 /* Pods_BottomCard.framework */,
 			);
@@ -208,6 +214,8 @@
 				674C52D924EBE4E000669D15 /* Sources */,
 				674C52DA24EBE4E000669D15 /* Frameworks */,
 				674C52DB24EBE4E000669D15 /* Resources */,
+				674C52EE24EBFBD000669D15 /* Carthage script */,
+				67CEAEA424EBFE55008F6C90 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -226,7 +234,6 @@
 				676282CF24D9A13000FB4C99 /* Sources */,
 				676282D024D9A13000FB4C99 /* Frameworks */,
 				676282D124D9A13000FB4C99 /* Resources */,
-				674C52D424EBDE8900669D15 /* Embed Frameworks */,
 				3492B512CFE411D3D6ABB39A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -289,6 +296,7 @@
 			files = (
 				674C52EA24EBF5DF00669D15 /* BottomCard.podspec in Resources */,
 				674C52C324E98E0800669D15 /* Media.xcassets in Resources */,
+				674C52ED24EBFAF200669D15 /* Cartfile in Resources */,
 				676282DE24D9A13000FB4C99 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +365,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		674C52EE24EBFBD000669D15 /* Carthage script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/pop.framework",
+			);
+			name = "Carthage script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = "/usr/local/bin/carthage copy-frameworks\n/usr/local/bin/carthage copy-frameworks\n/usr/local/bin/carthage copy-frameworks";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -413,6 +440,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BottomCard/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -444,6 +475,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BottomCard/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -585,6 +620,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SN7TUKGJPB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/BottomCardExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -608,6 +647,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SN7TUKGJPB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/BottomCardExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

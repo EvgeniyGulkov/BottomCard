@@ -3,6 +3,15 @@
 #### and using [POP](https://github.com/facebookarchive/pop) for animations
 
 ![alt-text](https://github.com/EvgeniyGulkov/BottomCardView/blob/master/BottomCardViewExample/Media.xcassets/screen_image.dataset/ezgif-6-5c005dac91f7.gif)
+
+<p align="center">
+  <a href="https://developer.apple.com/"><img alt="Platform" src="https://img.shields.io/badge/platform-iOS-green.svg"/></a>
+  <a href="https://developer.apple.com/swift"><img alt="Swift5" src="https://img.shields.io/badge/language-Swift%205.0-orange.svg"/></a>
+  <a href="https://cocoapods.org/pods/bottomcardview"><img alt="CocoaPods" src="https://img.shields.io/cocoapods/v/BottomCardView"/></a>
+  <a href="https://github.com/Carthage/Carthage"><img alt="Carthage" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"/></a>
+  <a href="https://github.com/EvgeniyGulkov/BottomCardView/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/cocoapods/l/BottomCardView"/></a>
+</p>
+
 ## Requirements
 BottomCardView is written in Swift 5. Compatible with iOS 11.0+.
 
@@ -12,6 +21,12 @@ BottomCardView is written in Swift 5. Compatible with iOS 11.0+.
 ```ruby
 pod 'BottomCardView'
 ```
+
+### Carthage
+```ruby
+github "EvgeniyGulkov/BottomCardView"
+```
+
 
 ## Usage
 ### Setup

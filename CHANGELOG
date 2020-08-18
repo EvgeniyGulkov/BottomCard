@@ -1,4 +1,8 @@
 ## [Unreleased]
+## [0.3.0] - 2020-08-18
+### Added
+- support Carthage
+
 ## [0.2.15] - 2020-08-18
 ### Fixed
 - fix safe area insets

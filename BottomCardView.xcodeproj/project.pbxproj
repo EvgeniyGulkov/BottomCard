@@ -14,6 +14,9 @@
 		674C52BD24E945D500669D15 /* BottomCardView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 674C52BC24E945D500669D15 /* BottomCardView.podspec */; };
 		674C52BF24E9546300669D15 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674C52BE24E9546300669D15 /* AnimationType.swift */; };
 		674C52C324E98E0800669D15 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 674C52C224E98E0800669D15 /* Media.xcassets */; };
+		674C52CF24EBDE8900669D15 /* BottomCardViewFrameWork.h in Headers */ = {isa = PBXBuildFile; fileRef = 674C52CD24EBDE8800669D15 /* BottomCardViewFrameWork.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		674C52D224EBDE8900669D15 /* BottomCardView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 674C52CB24EBDE8800669D15 /* BottomCardView.framework */; };
+		674C52D324EBDE8900669D15 /* BottomCardView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 674C52CB24EBDE8800669D15 /* BottomCardView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		676282D724D9A13000FB4C99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676282D624D9A13000FB4C99 /* AppDelegate.swift */; };
 		676282DB24D9A13000FB4C99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676282DA24D9A13000FB4C99 /* ViewController.swift */; };
 		676282DE24D9A13000FB4C99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 676282DC24D9A13000FB4C99 /* Main.storyboard */; };
@@ -27,6 +30,30 @@
 		E107E84D17A6D577A24EEEE7 /* Pods_BottomCardView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF5C22DE80BF539BBA9816C /* Pods_BottomCardView.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		674C52D024EBDE8900669D15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 676282CB24D9A13000FB4C99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 674C52CA24EBDE8800669D15;
+			remoteInfo = BottomCardViewFrameWork;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		674C52D424EBDE8900669D15 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				674C52D324EBDE8900669D15 /* BottomCardView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		63B2AE289596B6438941618B /* Pods-BottomCardView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BottomCardView.debug.xcconfig"; path = "Target Support Files/Pods-BottomCardView/Pods-BottomCardView.debug.xcconfig"; sourceTree = "<group>"; };
 		6731033624E56AC1007FF476 /* ViewAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAnimator.swift; sourceTree = "<group>"; };
@@ -36,7 +63,10 @@
 		674C52BC24E945D500669D15 /* BottomCardView.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BottomCardView.podspec; sourceTree = "<group>"; };
 		674C52BE24E9546300669D15 /* AnimationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
 		674C52C224E98E0800669D15 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		676282D324D9A13000FB4C99 /* BottomCardView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomCardView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		674C52CB24EBDE8800669D15 /* BottomCardView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BottomCardView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		674C52CD24EBDE8800669D15 /* BottomCardViewFrameWork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BottomCardViewFrameWork.h; sourceTree = "<group>"; };
+		674C52CE24EBDE8900669D15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		676282D324D9A13000FB4C99 /* BottomCardViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomCardViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		676282D624D9A13000FB4C99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		676282DA24D9A13000FB4C99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		676282DD24D9A13000FB4C99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,11 +83,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		674C52C824EBDE8800669D15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		676282D024D9A13000FB4C99 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E107E84D17A6D577A24EEEE7 /* Pods_BottomCardView.framework in Frameworks */,
+				674C52D224EBDE8900669D15 /* BottomCardView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,10 +113,20 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
+		674C52CC24EBDE8800669D15 /* BottomCardViewFrameWork */ = {
+			isa = PBXGroup;
+			children = (
+				674C52CD24EBDE8800669D15 /* BottomCardViewFrameWork.h */,
+				674C52CE24EBDE8900669D15 /* Info.plist */,
+			);
+			path = BottomCardViewFrameWork;
+			sourceTree = "<group>";
+		};
 		676282CA24D9A13000FB4C99 = {
 			isa = PBXGroup;
 			children = (
 				676282D524D9A13000FB4C99 /* BottomCardView */,
+				674C52CC24EBDE8800669D15 /* BottomCardViewFrameWork */,
 				676282D424D9A13000FB4C99 /* Products */,
 				96D21C60E84616E0E34A41B4 /* Pods */,
 				7296376928AB442FC0E2A4A8 /* Frameworks */,
@@ -88,7 +136,8 @@
 		676282D424D9A13000FB4C99 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				676282D324D9A13000FB4C99 /* BottomCardView.app */,
+				676282D324D9A13000FB4C99 /* BottomCardViewExample.app */,
+				674C52CB24EBDE8800669D15 /* BottomCardView.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,24 +191,55 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		674C52C624EBDE8800669D15 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				674C52CF24EBDE8900669D15 /* BottomCardViewFrameWork.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		676282D224D9A13000FB4C99 /* BottomCardView */ = {
+		674C52CA24EBDE8800669D15 /* BottomCardView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 676282E724D9A13200FB4C99 /* Build configuration list for PBXNativeTarget "BottomCardView" */;
+			buildConfigurationList = 674C52D724EBDE8900669D15 /* Build configuration list for PBXNativeTarget "BottomCardView" */;
 			buildPhases = (
-				FD86A6C4E8937ED52E9D92BB /* [CP] Check Pods Manifest.lock */,
-				676282CF24D9A13000FB4C99 /* Sources */,
-				676282D024D9A13000FB4C99 /* Frameworks */,
-				676282D124D9A13000FB4C99 /* Resources */,
-				B4A7A9C5C82EB8F78D370D86 /* [CP] Embed Pods Frameworks */,
+				674C52C624EBDE8800669D15 /* Headers */,
+				674C52C724EBDE8800669D15 /* Sources */,
+				674C52C824EBDE8800669D15 /* Frameworks */,
+				674C52C924EBDE8800669D15 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = BottomCardView;
+			productName = BottomCardViewFrameWork;
+			productReference = 674C52CB24EBDE8800669D15 /* BottomCardView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		676282D224D9A13000FB4C99 /* BottomCardViewExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 676282E724D9A13200FB4C99 /* Build configuration list for PBXNativeTarget "BottomCardViewExample" */;
+			buildPhases = (
+				FD86A6C4E8937ED52E9D92BB /* [CP] Check Pods Manifest.lock */,
+				676282CF24D9A13000FB4C99 /* Sources */,
+				676282D024D9A13000FB4C99 /* Frameworks */,
+				676282D124D9A13000FB4C99 /* Resources */,
+				B4A7A9C5C82EB8F78D370D86 /* [CP] Embed Pods Frameworks */,
+				674C52D424EBDE8900669D15 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				674C52D124EBDE8900669D15 /* PBXTargetDependency */,
+			);
+			name = BottomCardViewExample;
 			productName = BottomScrollViewExample;
-			productReference = 676282D324D9A13000FB4C99 /* BottomCardView.app */;
+			productReference = 676282D324D9A13000FB4C99 /* BottomCardViewExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -172,6 +252,9 @@
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = Gulkov;
 				TargetAttributes = {
+					674C52CA24EBDE8800669D15 = {
+						CreatedOnToolsVersion = 11.5;
+					};
 					676282D224D9A13000FB4C99 = {
 						CreatedOnToolsVersion = 11.5;
 					};
@@ -190,12 +273,20 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				676282D224D9A13000FB4C99 /* BottomCardView */,
+				674C52CA24EBDE8800669D15 /* BottomCardView */,
+				676282D224D9A13000FB4C99 /* BottomCardViewExample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		674C52C924EBDE8800669D15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		676282D124D9A13000FB4C99 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,6 +342,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		674C52C724EBDE8800669D15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		676282CF24D9A13000FB4C99 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -274,6 +372,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		674C52D124EBDE8900669D15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 674C52CA24EBDE8800669D15 /* BottomCardView */;
+			targetProxy = 674C52D024EBDE8900669D15 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		676282DC24D9A13000FB4C99 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -286,6 +392,62 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		674C52D524EBDE8900669D15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BottomCardViewFrameWork/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.2.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BottomCardView;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		674C52D624EBDE8900669D15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BottomCardViewFrameWork/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.2.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BottomCardView;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		676282E524D9A13200FB4C99 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -413,8 +575,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.2.15;
-				PRODUCT_BUNDLE_IDENTIFIER = com.BottomCardView;
-				PRODUCT_NAME = BottomCardView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BottomCardViewExample;
+				PRODUCT_NAME = BottomCardViewExample;
 				SWIFT_SUPPRESS_WARNINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -434,8 +596,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.2.15;
-				PRODUCT_BUNDLE_IDENTIFIER = com.BottomCardView;
-				PRODUCT_NAME = BottomCardView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BottomCardViewExample;
+				PRODUCT_NAME = BottomCardViewExample;
 				SWIFT_SUPPRESS_WARNINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -445,6 +607,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		674C52D724EBDE8900669D15 /* Build configuration list for PBXNativeTarget "BottomCardView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				674C52D524EBDE8900669D15 /* Debug */,
+				674C52D624EBDE8900669D15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		676282CE24D9A13000FB4C99 /* Build configuration list for PBXProject "BottomCardView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -454,7 +625,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		676282E724D9A13200FB4C99 /* Build configuration list for PBXNativeTarget "BottomCardView" */ = {
+		676282E724D9A13200FB4C99 /* Build configuration list for PBXNativeTarget "BottomCardViewExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				676282E824D9A13200FB4C99 /* Debug */,

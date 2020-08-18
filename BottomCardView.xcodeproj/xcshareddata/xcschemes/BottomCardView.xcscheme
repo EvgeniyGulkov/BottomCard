@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "676282D224D9A13000FB4C99"
-               BuildableName = "BottomCardView.app"
-               BlueprintName = "BottomCardView"
+               BuildableName = "BottomCardViewExample.app"
+               BlueprintName = "BottomCardViewExample"
                ReferencedContainer = "container:BottomCardView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "676282D224D9A13000FB4C99"
-            BuildableName = "BottomCardView.app"
-            BlueprintName = "BottomCardView"
+            BuildableName = "BottomCardViewExample.app"
+            BlueprintName = "BottomCardViewExample"
             ReferencedContainer = "container:BottomCardView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "676282D224D9A13000FB4C99"
-            BuildableName = "BottomCardView.app"
-            BlueprintName = "BottomCardView"
+            BuildableName = "BottomCardViewExample.app"
+            BlueprintName = "BottomCardViewExample"
             ReferencedContainer = "container:BottomCardView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -1,4 +1,8 @@
 ## [Unreleased]
+## [0.2.15] - 2020-08-18
+### Fixed
+- fix safe area insets
+
 ## [0.2.14] - 2020-08-17
 ### Changed
 - change safe area inset settings

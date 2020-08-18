@@ -1,5 +1,5 @@
-# BottomCardView
-#### BottomCardView is a view based on UIView, written in Swift 
+# BottomCard
+#### BottomCard is a view based on UIView, written in Swift 
 #### and using [POP](https://github.com/facebookarchive/pop) for animations
 
 ![alt-text](https://github.com/EvgeniyGulkov/BottomCard/blob/master/BottomCardExample/Media.xcassets/screen_image.dataset/ezgif-6-5c005dac91f7.gif)
@@ -7,24 +7,24 @@
 <p align="center">
   <a href="https://developer.apple.com/"><img alt="Platform" src="https://img.shields.io/badge/platform-iOS-green.svg"/></a>
   <a href="https://developer.apple.com/swift"><img alt="Swift5" src="https://img.shields.io/badge/language-Swift%205.0-orange.svg"/></a>
-  <a href="https://cocoapods.org/pods/bottomcardview"><img alt="CocoaPods" src="https://img.shields.io/cocoapods/v/BottomCardView"/></a>
+  <a href="https://cocoapods.org/pods/bottomcard"><img alt="CocoaPods" src="https://img.shields.io/cocoapods/v/BottomCard"/></a>
   <a href="https://github.com/Carthage/Carthage"><img alt="Carthage" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"/></a>
-  <a href="https://github.com/EvgeniyGulkov/BottomCardView/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/cocoapods/l/BottomCardView"/></a>
+  <a href="https://github.com/EvgeniyGulkov/BottomCard/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/cocoapods/l/BottomCard"/></a>
 </p>
 
 ## Requirements
-BottomCardView is written in Swift 5. Compatible with iOS 11.0+.
+BottomCard is written in Swift 5. Compatible with iOS 11.0+.
 
 ## Installation
 
 ### Cocoapods
 ```ruby
-pod 'BottomCardView'
+pod 'BottomCard'
 ```
 
 ### Carthage
 ```ruby
-github "EvgeniyGulkov/BottomCardView"
+github "EvgeniyGulkov/BottomCard"
 ```
 
 
@@ -36,7 +36,7 @@ You can use this view as simple UIView using interface builder or add it program
 Usage example:
 
 ```swift
-import BottomCardView
+import BottomCard
 
 class ViewController: UIViewController, BottomCardViewDelegate {
 
@@ -115,4 +115,4 @@ func bottomCardView(viewHeightDidChange height: CGFloat)
 
 ## License
 
-BottomCardView is available under the MIT license. See the LICENSE file for more info.
+BottomCard is available under the MIT license. See the LICENSE file for more info.

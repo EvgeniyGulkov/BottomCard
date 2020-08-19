@@ -12,6 +12,7 @@ import pop
 public class ViewAnimator {
     static func topSpringAnimation(view: BottomCardView, to: CGFloat, bounces: CGFloat, speed: CGFloat, _ completion: ((POPAnimation?, Bool) -> Void)?) {
         let spring = POPSpringAnimation(propertyNamed: kPOPViewFrame)
+        spring?.delegate = view
         var minY: CGFloat = view.maxHeight - to + view.topInset
         var height = to
         if minY <= view.topInset {
@@ -30,6 +31,7 @@ public class ViewAnimator {
 
     static func topAnimation(view: BottomCardView, to: CGFloat, duration: Double, _ completion: ((POPAnimation?, Bool) -> Void)?) {
         let basic = POPBasicAnimation(propertyNamed: kPOPViewFrame)
+        basic?.delegate = view
         var minY: CGFloat = view.maxHeight - to + view.topInset
         var height = to
         if minY <= view.topInset {

@@ -15,6 +15,14 @@ public protocol BottomCardViewDelegate: class {
                         withProgress progress: CGFloat)
 
     func bottomCardView(viewHeightDidChange height: CGFloat)
+
+    func bottomCardView(popAnimationDidStart animation: POPAnimation)
+
+    func bottomCardView(popAnimationDidApply animation: POPAnimation)
+
+    func bottomCardView(popAnimationDidReach animation: POPAnimation)
+
+    func bottomCardView(popAnimationDidStop animation: POPAnimation, finished: Bool)
 }
 
 public extension BottomCardViewDelegate {
@@ -23,4 +31,30 @@ public extension BottomCardViewDelegate {
                         withProgress progress: CGFloat) {}
 
     func bottomCardView(viewHeightDidChange height: CGFloat) {}
+
+    func bottomCardView(popAnimationDidStart animation: POPAnimation) {}
+
+    func bottomCardView(popAnimationDidApply animation: POPAnimation) {}
+
+    func bottomCardView(popAnimationDidReach animation: POPAnimation) {}
+
+    func bottomCardView(popAnimationDidStop animation: POPAnimation, finished: Bool) {}
+}
+
+extension BottomCardView: POPAnimationDelegate {
+    public func pop_animationDidStart(_ anim: POPAnimation!) {
+        delegate?.bottomCardView(popAnimationDidStart: anim)
+    }
+
+    public func pop_animationDidApply(_ anim: POPAnimation!) {
+        delegate?.bottomCardView(popAnimationDidApply: anim)
+    }
+
+    public func pop_animationDidReach(toValue anim: POPAnimation!) {
+        delegate?.bottomCardView(popAnimationDidReach: anim)
+    }
+
+    public func pop_animationDidStop(_ anim: POPAnimation!, finished: Bool) {
+        delegate?.bottomCardView(popAnimationDidStop: anim, finished: finished)
+    }
 }

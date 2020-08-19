@@ -31,7 +31,8 @@ github "EvgeniyGulkov/BottomCard"
 ## Usage
 ### Setup
 
-You can use this view as simple UIView using interface builder or add it programmatically
+Use this view as simple UIView using interface builder or add it programmatically
+You can add as more points as you want. The highest point value is the height limit for your bottomCardView.
 
 Usage example:
 
@@ -107,6 +108,19 @@ You can track the height and position using the dedicated delegate methods:
 func bottomCardView(progressDidChangeFromPoint index: Int, toPoint nextIndex: Int, withProgress progress: CGFloat)
 
 func bottomCardView(viewHeightDidChange height: CGFloat)
+```
+
+#### Tracking animation
+
+Also you can track the animation using the delegate methods:
+```swift
+func bottomCardView(popAnimationDidStart animation: POPAnimation)
+
+func bottomCardView(popAnimationDidApply animation: POPAnimation)
+
+func bottomCardView(popAnimationDidReach animation: POPAnimation)
+
+func bottomCardView(popAnimationDidStop animation: POPAnimation, finished: Bool)
 ```
 
 ## Author

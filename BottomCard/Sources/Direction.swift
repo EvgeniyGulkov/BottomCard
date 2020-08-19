@@ -12,3 +12,7 @@ public enum Direction {
     case up
     case down
 }
+public enum Side {
+    case top
+    case bottom
+}

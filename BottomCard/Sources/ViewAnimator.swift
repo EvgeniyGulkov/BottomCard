@@ -19,6 +19,10 @@ public class ViewAnimator {
             minY = view.topInset
             height = view.maxHeight
         }
+        if view.side == .top {
+            minY = view.topInset
+            height = to
+        }
         spring?.toValue = CGRect(x: view.frame.minX, y: minY, width: view.frame.size.width, height: height)
         spring?.springBounciness = bounces
         spring?.springSpeed = speed
@@ -37,6 +41,10 @@ public class ViewAnimator {
         if minY <= view.topInset {
             minY = view.topInset
             height = view.maxHeight
+        }
+        if view.side == .top {
+            minY = view.topInset
+            height = to
         }
         basic?.toValue = CGRect(x: view.frame.minX, y: minY, width: view.frame.size.width, height: height)
         basic?.duration = duration

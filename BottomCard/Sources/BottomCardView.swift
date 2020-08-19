@@ -14,6 +14,7 @@ public class BottomCardView: UIView {
     public var animationSpeed: CGFloat = 10
     public var currentPointIndex = 0
     public var direction: Direction!
+    public var side: Side = .bottom
 
     var pointsRaw = Set<CGFloat>()
     var previousPoint = CGPoint(x: 0, y: 0)
@@ -59,7 +60,12 @@ public class BottomCardView: UIView {
 
     var height: CGFloat {
         get {
-            return maxHeight - frame.minY + topInset
+            switch side {
+            case .top:
+                return self.frame.size.height
+            case .bottom:
+                return maxHeight - frame.minY + topInset
+            }
         }
         set {
             if let min = points.first, newValue < min {
@@ -102,8 +108,12 @@ public class BottomCardView: UIView {
     }
 
     func changeSize(difference: CGFloat) {
+        var difference = difference
         removeAllAnimations()
         direction = difference > 0 ? .up : .down
+        if side == .top {
+            difference *= -1
+        }
         if height >= points.last! {
             height += difference / 5
         } else {
@@ -202,7 +212,13 @@ public class BottomCardView: UIView {
     }
 
     private func updateHeight(value: CGFloat) {
-        self.frame.origin.y = maxHeight - value + topInset
-        self.frame.size.height = value
+        switch side {
+        case .top:
+            self.frame.origin.y = topInset
+            self.frame.size.height = value
+        case .bottom:
+            self.frame.origin.y = maxHeight - value + topInset
+            self.frame.size.height = value
+        }
     }
 }

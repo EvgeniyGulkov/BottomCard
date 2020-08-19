@@ -11,7 +11,8 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="BottomCardView" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="BottomCardExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,49 +32,53 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTK-dA-Mgl" customClass="BottomCardView" customModule="BottomCardView" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTK-dA-Mgl" customClass="BottomCardView" customModule="BottomCardExample" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMg-hS-53S">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="758" width="414" height="60"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Zez-GQ-bjq"/>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dJN-RL-LNh">
-                                        <rect key="frame" x="0.0" y="385" width="414" height="433"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="558"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </tableView>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kDt-si-2jN">
-                                        <rect key="frame" x="0.0" y="60" width="414" height="325"/>
-                                    </mapView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smiley" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bcD-IO-iBq">
+                                        <rect key="frame" x="0.0" y="558.5" width="414" height="199"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="SUz-Hj-kYK"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.71286386986301364" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="gMg-hS-53S" firstAttribute="top" secondItem="mTK-dA-Mgl" secondAttribute="top" id="97S-V2-Z4V"/>
-                                    <constraint firstItem="kDt-si-2jN" firstAttribute="leading" secondItem="mTK-dA-Mgl" secondAttribute="leading" id="9WK-Z6-NNS"/>
-                                    <constraint firstItem="dJN-RL-LNh" firstAttribute="top" secondItem="kDt-si-2jN" secondAttribute="bottom" id="LhH-ke-T1m"/>
-                                    <constraint firstItem="kDt-si-2jN" firstAttribute="height" secondItem="dJN-RL-LNh" secondAttribute="height" multiplier="0.75" id="Qhm-hk-sUR"/>
-                                    <constraint firstAttribute="trailing" secondItem="dJN-RL-LNh" secondAttribute="trailing" id="RFQ-uH-OEl"/>
-                                    <constraint firstAttribute="bottom" secondItem="dJN-RL-LNh" secondAttribute="bottom" id="Xts-xH-WWX"/>
+                                    <constraint firstAttribute="bottom" secondItem="gMg-hS-53S" secondAttribute="bottom" id="6WN-Fs-trV"/>
+                                    <constraint firstItem="bcD-IO-iBq" firstAttribute="top" secondItem="dJN-RL-LNh" secondAttribute="bottom" id="9w9-LY-9ox"/>
+                                    <constraint firstItem="dJN-RL-LNh" firstAttribute="top" secondItem="mTK-dA-Mgl" secondAttribute="top" id="BIO-t5-AZ7"/>
+                                    <constraint firstItem="dJN-RL-LNh" firstAttribute="leading" secondItem="mTK-dA-Mgl" secondAttribute="leading" id="Ipj-0s-nKh"/>
+                                    <constraint firstAttribute="trailing" secondItem="dJN-RL-LNh" secondAttribute="trailing" id="K1w-qP-2e8"/>
                                     <constraint firstAttribute="trailing" secondItem="gMg-hS-53S" secondAttribute="trailing" id="Y5a-k5-J4Z"/>
+                                    <constraint firstAttribute="trailing" secondItem="bcD-IO-iBq" secondAttribute="trailing" id="avi-54-gtg"/>
+                                    <constraint firstItem="bcD-IO-iBq" firstAttribute="leading" secondItem="mTK-dA-Mgl" secondAttribute="leading" id="cLn-p7-FCJ"/>
+                                    <constraint firstItem="gMg-hS-53S" firstAttribute="top" secondItem="bcD-IO-iBq" secondAttribute="bottom" id="nja-cY-M7i"/>
                                     <constraint firstItem="gMg-hS-53S" firstAttribute="leading" secondItem="mTK-dA-Mgl" secondAttribute="leading" id="ptD-sV-F2Q"/>
-                                    <constraint firstItem="dJN-RL-LNh" firstAttribute="leading" secondItem="mTK-dA-Mgl" secondAttribute="leading" id="sTz-u9-FhS"/>
-                                    <constraint firstItem="kDt-si-2jN" firstAttribute="top" secondItem="gMg-hS-53S" secondAttribute="bottom" id="tL7-s7-zsF"/>
-                                    <constraint firstAttribute="trailing" secondItem="kDt-si-2jN" secondAttribute="trailing" id="xKj-Gw-sHh"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mTK-dA-Mgl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="19I-Zb-COA"/>
+                            <constraint firstItem="mTK-dA-Mgl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5Ly-cp-lyN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mTK-dA-Mgl" secondAttribute="trailing" id="7hB-Ke-040"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rG8-4s-szb" secondAttribute="trailing" id="80T-wJ-fUr"/>
-                            <constraint firstItem="rG8-4s-szb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AwV-Nx-eOD"/>
-                            <constraint firstItem="mTK-dA-Mgl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Fws-aZ-DxM"/>
+                            <constraint firstItem="rG8-4s-szb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AtB-l4-AK6"/>
+                            <constraint firstItem="rG8-4s-szb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZuE-Vy-i0O"/>
+                            <constraint firstItem="mTK-dA-Mgl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qal-oR-vwr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mTK-dA-Mgl" secondAttribute="bottom" id="tJb-V1-u2A"/>
-                            <constraint firstItem="rG8-4s-szb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tw0-ja-Hws"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rG8-4s-szb" secondAttribute="bottom" id="wA3-wv-Q3R"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -87,9 +92,11 @@
                         <outlet property="tableViewInBottom" destination="dJN-RL-LNh" id="nBC-de-NEm"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="smiley" catalog="system" width="128" height="121"/>
+    </resources>
 </document>

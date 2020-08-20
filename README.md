@@ -2,7 +2,7 @@
 #### BottomCard is a view based on UIView, written in Swift 
 #### and using [POP](https://github.com/facebookarchive/pop) for animations
 
-![alt-text](https://github.com/EvgeniyGulkov/BottomCard/blob/master/BottomCardExample/Media.xcassets/screen_image.dataset/ezgif-6-5c005dac91f7.gif)
+![alt-text](https://github.com/EvgeniyGulkov/BottomCard/blob/master/BottomCardExample/Media.xcassets/screen_image.dataset/ezgif-4-73d9a315e712.gif)
 ![alt-text](https://github.com/EvgeniyGulkov/BottomCard/blob/master/BottomCardExample/Media.xcassets/test-bottom.dataset/ezgif-4-7608f111ba9e.gif)
 
 <p align="center">

@@ -3,6 +3,7 @@
 #### and using [POP](https://github.com/facebookarchive/pop) for animations
 
 ![alt-text](https://github.com/EvgeniyGulkov/BottomCard/blob/master/BottomCardExample/Media.xcassets/screen_image.dataset/ezgif-6-5c005dac91f7.gif)
+![alt-text](https://github.com/EvgeniyGulkov/BottomCard/blob/master/BottomCardExample/Media.xcassets/test-bottom.dataset/ezgif-4-7608f111ba9e.gif)
 
 <p align="center">
   <a href="https://developer.apple.com/"><img alt="Platform" src="https://img.shields.io/badge/platform-iOS-green.svg"/></a>
@@ -99,6 +100,14 @@ Set safe area insets:
 override func viewDidLayoutSubviews() {
     bottomCardView.insets = view.safeAreaInsets
 }
+```
+
+Use from top:
+
+![alt-text](https://github.com/EvgeniyGulkov/BottomCard/blob/master/BottomCardExample/Media.xcassets/test-top.dataset/ezgif-4-3cd1f7fa5b36.gif)
+
+```swift
+bottomCardView.side = .top
 ```
 
 #### Tracking height

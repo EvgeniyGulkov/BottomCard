@@ -31,8 +31,9 @@ github "EvgeniyGulkov/BottomCard"
 ## Usage
 ### Setup
 
-Use this view as simple UIView using interface builder or add it programmatically
-You can add as more points as you want. The highest point value is the height limit for your bottomCardView.
+Use this view as simple UIView using interface builder or add it programmatically.
+You can add as more points as you want.
+The highest point value is the height limit for your bottomCardView.
 
 Usage example:
 

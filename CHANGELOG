@@ -1,4 +1,8 @@
 ## [Unreleased]
+## [0.4.0] - 2020-08-19
+### Added
+- add delegate methods for tracking pop animations
+
 ## [0.3.0] - 2020-08-18
 ### Fixed
 - some fixes for Carthage support

@@ -31,6 +31,7 @@ class ViewController: UIViewController, BottomCardViewDelegate {
         bottomCardView.minPoint = 20
         bottomCardView.delegate = self
         bottomCardView.addScroll(for: tableViewInBottom)
+        bottomCardView.side = .top
         headerHeight.constant = navigationController!.navigationBar.frame.height
     }
 

@@ -14,10 +14,15 @@ public class BottomCardView: UIView {
     public var animationSpeed: CGFloat = 10
     public var currentPointIndex = 0
     public var direction: Direction!
-    public var side: Side = .bottom
 
     var pointsRaw = Set<CGFloat>()
     var previousPoint = CGPoint(x: 0, y: 0)
+
+    public var side: Side = .bottom {
+        didSet {
+            moveToPoint(index: 0, animation: .none)
+        }
+    }
 
     var maxHeight: CGFloat {
         return UIScreen.main.bounds.height - topInset - bottomInset
@@ -41,7 +46,7 @@ public class BottomCardView: UIView {
                 if maxPoint != nil {
                     addPoint(value: .infinity)
                 }
-                moveToNearestPoint(animation: .basic(duration: 0.01))
+                moveToPoint(index: 0, animation: .none)
             }
         }
     }

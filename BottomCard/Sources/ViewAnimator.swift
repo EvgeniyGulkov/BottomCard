@@ -10,6 +10,9 @@ import UIKit
 import pop
 
 public class ViewAnimator {
+    private static let springAnimationKey = "kPOPViewFrameSpring"
+    private static let basicAnimationKey = "kPOPViewFrameBasic"
+
     static func topSpringAnimation(view: BottomCardView, to: CGFloat, bounces: CGFloat, speed: CGFloat, _ completion: ((POPAnimation?, Bool) -> Void)?) {
         let spring = POPSpringAnimation(propertyNamed: kPOPViewFrame)
         spring?.delegate = view
@@ -30,7 +33,7 @@ public class ViewAnimator {
             view.height = to
             completion?($0, $1)
         }
-        view.pop_add(spring, forKey: "kPOPViewFrameSpring")
+        view.pop_add(spring, forKey: springAnimationKey)
     }
 
     static func topAnimation(view: BottomCardView, to: CGFloat, duration: Double, _ completion: ((POPAnimation?, Bool) -> Void)?) {
@@ -52,6 +55,6 @@ public class ViewAnimator {
             view.height = to
             completion?($0, $1)
         }
-        view.pop_add(basic, forKey: "kPOPViewFrameBasic")
+        view.pop_add(basic, forKey: basicAnimationKey)
     }
 }

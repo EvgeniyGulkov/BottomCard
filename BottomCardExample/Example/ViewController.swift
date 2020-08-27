@@ -18,6 +18,7 @@ class ViewController: UIViewController, BottomCardViewDelegate {
     @IBOutlet weak var headerHeight: NSLayoutConstraint!
     @IBOutlet weak var headerView: UIView!
     
+    @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -39,6 +40,7 @@ class ViewController: UIViewController, BottomCardViewDelegate {
         bottomCardView.insets = view.safeAreaInsets
     }
 
-    func bottomCardView(progressDidChangeFromPoint index: Int, toPoint nextIndex: Int, withProgress progress: CGFloat) {
+    func bottomCardView(viewHeightDidChange height: CGFloat) {
+        tableViewTopConstraint.constant = height
     }
 }

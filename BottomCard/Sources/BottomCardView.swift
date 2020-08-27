@@ -10,30 +10,17 @@ import UIKit
 import pop
 
 public class BottomCardView: UIView {
+    public weak var delegate: BottomCardViewDelegate?
+
     public var bounces: CGFloat = 5
     public var animationSpeed: CGFloat = 10
     public var currentPointIndex = 0
     public var direction: Direction!
 
-    var pointsRaw = Set<CGFloat>()
-    var previousPoint = CGPoint(x: 0, y: 0)
-
     public var side: Side = .bottom {
         didSet {
             moveToPoint(index: 0, animation: .none)
         }
-    }
-
-    var maxHeight: CGFloat {
-        return UIScreen.main.bounds.height - topInset - bottomInset
-    }
-
-    var topInset: CGFloat {
-        return insets?.top ?? 0
-    }
-
-    var bottomInset: CGFloat {
-        return insets?.bottom ?? 0
     }
 
     public var insets: UIEdgeInsets? {
@@ -51,17 +38,22 @@ public class BottomCardView: UIView {
         }
     }
 
-    private func optimize() {
-        if let min = points.first, height < min {
-            height = min
-        }
-    }
-
-    private var safeInsets: UIEdgeInsets?
-
     public var points: [TargetPoint] {
         return pointsRaw.sorted(by: <)
     }
+
+    public var minPoint: CGFloat {
+        get {
+            return min
+        }
+        set {
+            replaceMinPoint(value: newValue)
+        }
+    }
+
+    var maxPoint: CGFloat?
+    var pointsRaw = Set<CGFloat>()
+    var previousPoint = CGPoint(x: 0, y: 0)
 
     var height: CGFloat {
         get {
@@ -81,26 +73,21 @@ public class BottomCardView: UIView {
         }
     }
 
-    public var minPoint: CGFloat {
-        get {
-            return min
-        }
-        set {
-            pointsRaw.remove(min)
-            min = newValue
-            if min < 0 {
-                min = 0
-            }
-            pointsRaw.insert(min)
-            optimize()
-        }
+    var topInset: CGFloat {
+        return insets?.top ?? 0
     }
 
-    var maxPoint: CGFloat?
+    var bottomInset: CGFloat {
+        return insets?.bottom ?? 0
+    }
+    
+    var maxHeight: CGFloat {
+        return UIScreen.main.bounds.height - topInset - bottomInset
+    }
+
+    private var safeInsets: UIEdgeInsets?
 
     private var min: CGFloat = 0
-
-    public weak var delegate: BottomCardViewDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -178,6 +165,7 @@ public class BottomCardView: UIView {
     }
 
     func getNextPoint() -> Int {
+        getCurrentPoint()
         let currentPointHeight = points[currentPointIndex]
         var nextPointIndex: Int = currentPointIndex
         if height > currentPointHeight {
@@ -224,6 +212,22 @@ public class BottomCardView: UIView {
         case .bottom:
             self.frame.origin.y = maxHeight - value + topInset
             self.frame.size.height = value
+        }
+    }
+
+    private func replaceMinPoint(value: CGFloat) {
+        pointsRaw.remove(min)
+        min = value
+        if min < 0 {
+            min = 0
+        }
+        pointsRaw.insert(min)
+        optimize()
+    }
+
+    private func optimize() {
+        if let min = points.first, height < min {
+            height = min
         }
     }
 }
